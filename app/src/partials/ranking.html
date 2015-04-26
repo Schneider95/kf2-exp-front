@@ -5,7 +5,7 @@
   <div layout="row" layout-align="center center">
     <md-select ng-model="ctrl.selectedStat" 
                ng-change="ctrl.changeStat()"
-               placeholder="Favorite Topping">
+               placeholder="Choose stat">
       <md-option ng-value="stat.stat_name" 
                  ng-repeat="stat in ctrl.getStatsList()">
         {{stat.visible_stat_name}}
