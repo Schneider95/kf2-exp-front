@@ -77,7 +77,9 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         2 :  ["Supplier"],
         37 : ["Ammo", "Fortitude", "Tactical Reload"], // hichem avait ses trois skills et cela indiquait 37
         102 : ["Ammo", "Fortitude", "Tactical Reload", "Strength"],
-        150 : ["Ammo", "Fortitude", "Tactical Reload", "Tenacity"]
+        150 : ["Ammo", "Fortitude", "Tactical Reload", "Tenacity"],
+        149 : ["Ammo", "Fortitude", "Bombard", "Tenacity"],
+        
         
         /*
         3 :  ["Ammo", "Fortitude"],
