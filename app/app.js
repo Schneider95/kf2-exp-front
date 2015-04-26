@@ -5,13 +5,13 @@ var folder = document.location.pathname.split('/')[1];
 var partialsPath;
 
 if (folder.length === 0) {
-  partialsPath = origin + '/app/src/partials/';
+  partialsPath = origin + '/src/partials/';
 } else {
-  partialsPath = origin + '/' + folder + '/app/src/partials/';
+  partialsPath = origin + '/' + folder + '/src/partials/';
 }
 
-module.constant('PartialsPath', partialsPath);
 module.constant('SecondsBeforeUpdatePlayer', 1000);
+module.constant('PartialsPath', partialsPath);
 
 module.config(function($routeProvider) {
   $routeProvider

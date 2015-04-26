@@ -212,11 +212,6 @@ td {
   width:90% !important;
 }
 
-.menuButton span {
+.menuButton span, .deleteButton span, .addButton span {
   font-size: 1rem;
 }
-
-.deleteButton span {
-  font-size: 1rem;
-}
-
