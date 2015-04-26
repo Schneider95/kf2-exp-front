@@ -6,10 +6,10 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         1 :  ["Night Vision"], // j'avais sullement night vision et ca indiquait 1
         2 :  ["Call out"], // j'avais seulement call out et ca indiquait 2
         
-        3 :  ["Night Vision", "Large mags"],
-        4 :  ["Night Vision", "Backup"],
-        5 :  ["Call out", "Large mags"],
-        6 :  ["Call out", "Backup"],
+        5 :  ["Night Vision", "Large mags"],
+        6 :  ["Call out", "Large mags"],
+        9 :  ["Night Vision", "Backup"],
+        10 :  ["Call out", "Backup"],
         
         /*
         7 :  ["Night Vision", "Large mags", "Single Fire"],
@@ -76,7 +76,8 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         1 :  ["Ammo"],
         2 :  ["Supplier"],
         37 : ["Ammo", "Fortitude", "Tactical Reload"], // hichem avait ses trois skills et cela indiquait 37
-        
+        102 : ["Ammo", "Fortitude", "Tactical Reload", "Strength"],
+        150 : ["Ammo", "Fortitude", "Tactical Reload", "Tenacity"]
         
         /*
         3 :  ["Ammo", "Fortitude"],
@@ -115,7 +116,7 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         34 : ["Ammo", "Fortitude", "Bombard", "Tenacity", "Zed Time Barrage"],
         35 : ["Ammo", "Fortitude", "Tactical Reload", "Strength", "Zed Time Safeguard"],
         36 : ["Ammo", "Fortitude", "Tactical Reload", "Strength", "Zed Time Barrage"],
-        //37 : ["Ammo", "Fortitude", "Tactical Reload", "Tenacity", "Zed Time Safeguard"],
+        37 : ["Ammo", "Fortitude", "Tactical Reload", "Tenacity", "Zed Time Safeguard"],
         38 : ["Ammo", "Fortitude", "Tactical Reload", "Tenacity", "Zed Time Barrage"],
         39 : ["Ammo", "Regeneration", "Bombard", "Strength", "Zed Time Safeguard"],
         40 : ["Ammo", "Regeneration", "Bombard", "Strength", "Zed Time Barrage"],
