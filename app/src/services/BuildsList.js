@@ -149,7 +149,9 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         2 :  ["Enforcer"],
         5 :  ["Healing Surge", "Combatant"], // nems avait pris les deux skills de gauche
         21 :  ["Healing Surge", "Combatant", "Regeneration"], // nems avait pris ces trois skills  et ca indiquait 21
-        //25 ? demandé a nems
+        25 : ["Healing Surge", "Combatant", "Lacerate"],
+        89 : ["Healing Surge", "Armament", "Regeneration", "Vaccination"],
+        153 : ["Healing Surge", "Armament", "Regeneration", "Acidic compound"],
         
         /*
         
