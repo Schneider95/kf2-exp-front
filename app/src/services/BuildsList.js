@@ -11,6 +11,17 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         9 :  ["Night Vision", "Backup"],
         10 :  ["Call out", "Backup"],
         
+        21:  ["Night Vision", "Large mags", "Single Fire"],
+        22:  ["Call out", "Large mags", "Single Fire"],
+        25:  ["Night Vision", "Backup", "Single Fire"],
+        26:  ["Call out", "Backup", "Single Fire"],
+        37:  ["Night Vision", "Large mags", "Tactical Reload"],
+        38:  ["Call out", "Large mags", "Tactical Reload"],
+        41:  ["Night Vision", "Backup", "Tactical Reload"],
+        42:  ["Call out", "Backup", "Tactical Reload"],
+        
+        
+        
         /*
         7 :  ["Night Vision", "Large mags", "Single Fire"],
         8 :  ["Night Vision", "Large mags", "Single Fire"],
