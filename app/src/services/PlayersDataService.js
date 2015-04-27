@@ -112,7 +112,7 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
           BackEndRequestService.getProfileDataFromSteamAPI(steamId).then(
                   function (success) {
                     if (success.communityvisibilitystate === 3) {
-                      service.registeringPlayer.message = 'Player have a public profile. Checking if a have Killing Floor...';
+                      service.registeringPlayer.message = 'Player have a public profile. Checking if a have Killing Floor 2...';
                       return checkIfPlayerHaveGamePromise();
                     } else {
                       service.registeringPlayer.message = 'Player don\'t have a public profile. Unable to retrieve stats.';
@@ -127,11 +127,12 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
           BackEndRequestService.checkIfPlayerHaveGame(steamId).then(
                   function (success) {
                     if (success) {
-                      service.registeringPlayer.message = 'Player have Killing Floor. Retrieve profile data...';
+                      service.registeringPlayer.message = 'Player have Killing Floor 2. Retrieve profile data...';
                       return updateProfileDataPromise();
-                    }
-
-                    service.registeringPlayer.message = success.data;
+                    } else {
+		      service.registeringPlayer.message = 'Player don\'t have Killing Floor 2.';
+		      service.registeringPlayer.state = false;
+	            }
                   }, function (error) {
             service.registeringPlayer.message = error;
             service.registeringPlayer.state = false;
