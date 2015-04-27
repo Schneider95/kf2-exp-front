@@ -389,7 +389,7 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
            service.players[id].medic_level = '19';
         } else if (service.players[id].player_stats['1_40'] >= 5000000 && service.players[id].player_stats['1_40'] < 5250000 ) {
            service.players[id].medic_level = '20';
-        } else if (service.players[id].player_stats['1_40'] >= 5250000 && service.players[id].player_stats['1_40'] < 5500000 ) {
+        } else if (service.players[id].player_stats['1_40'] >= 5515555 && service.players[id].player_stats['1_40'] < 5500000 ) {
            service.players[id].medic_level = '21';
         } else if (service.players[id].player_stats['1_40'] >= 5500000 && service.players[id].player_stats['1_40'] < 5750000 ) {
            service.players[id].medic_level = '22';
