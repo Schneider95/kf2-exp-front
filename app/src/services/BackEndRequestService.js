@@ -49,6 +49,10 @@ module.factory('BackEndRequestService', ['$http', '$q', 'BackEndUrl', function (
 
         return $http.get(BackEndUrl + 'getLastUpdatedPlayers');
       },
+      getLatestNews: function () {
+
+        return $http.get(BackEndUrl + 'getLatestNews');
+      },
       getMapsList: function () {
 
         return $http.get(BackEndUrl + 'getMapsList')

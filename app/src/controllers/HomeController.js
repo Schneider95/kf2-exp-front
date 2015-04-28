@@ -6,6 +6,17 @@ module.controller('HomeController', ['BackEndRequestService', 'PlayersDataServic
       return self.players.filter(createFilterFor(query));
     }
 
+    function loadNews() {
+      BackEndRequestService.getLatestNews().then(
+              function (success) {
+                self.news = success.data;
+              },
+              function (error) {
+
+              }
+      );
+    }
+
     function loadPlayers() {
       BackEndRequestService.getPlayersList().then(
               function (success) {
@@ -16,6 +27,7 @@ module.controller('HomeController', ['BackEndRequestService', 'PlayersDataServic
               }
       );
     }
+
 
     function loadLastUpdatedPlayers() {
       BackEndRequestService.getLastUpdatedPlayers().then(
@@ -49,6 +61,7 @@ module.controller('HomeController', ['BackEndRequestService', 'PlayersDataServic
     };
     
     
+    loadNews();
     loadPlayers();
     loadLastUpdatedPlayers();
 
@@ -61,6 +74,5 @@ module.controller('HomeController', ['BackEndRequestService', 'PlayersDataServic
     self.searchTextChange = searchTextChange;
     self.addPlayerToStatPage = addPlayerToStatPage;
     
-    
-    
+       
   }]);
