@@ -45,6 +45,10 @@ module.controller('StatsController', ['$routeParams', 'BackEndRequestService', '
       return BuildsList;
     };
 
+    self.getReadableTimePlayed = function(timePlayed) {
+	return parseInt(timePlayed / 60) + 'h';
+    };
+
     // check if params in URL is correctly constrcuted
     var ids = PlayersDataService.checkPlayersFromUrl($routeParams.ids);
 
