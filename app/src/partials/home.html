@@ -5,7 +5,17 @@
 
       This site allow you to retrieve player stats on Killing Floor 2, a cooperation game for PC available on Steam.
 
-
+      <h3>Latest news</h3>
+      
+      <div ng-repeat="new in ctrl.news">
+        <a >
+          <b ng-bind="new.title"></b>
+        </a> - 
+        <span ng-bind="new.date | date:'dd/MM/yyyy HH:mm'"></span><br><br>
+        <span ng-bind="new.contents"></span> <a href="{{new.url}}">Read the news</a>
+        <br>
+        <br>
+      </div>
     </div>
 
     <div flex-gt-sm hide-sm>
