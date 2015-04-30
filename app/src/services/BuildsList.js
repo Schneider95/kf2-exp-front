@@ -19,8 +19,25 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         38:  ["Call out", "Large mags", "Tactical Reload"],
         41:  ["Night Vision", "Backup", "Tactical Reload"],
         42:  ["Call out", "Backup", "Tactical Reload"],
-        
-        166: ["Call out", "Large mags", "Tactical Reload", "Autofire"],
+
+        149:  ["Night Vision", "Large mags", "Single Fire", "Autofire"],
+        150:  ["Call out", "Large mags", "Single Fire", "Autofire"],
+        153:  ["Night Vision", "Backup", "Single Fire", "Autofire"],
+        154:  ["Call out", "Backup", "Single Fire", "Autofire"],
+        165:  ["Night Vision", "Large mags", "Tactical Reload", "Autofire"],
+        166:  ["Call out", "Large mags", "Tactical Reload", "Autofire"],
+        169:  ["Night Vision", "Backup", "Tactical Reload", "Autofire"],
+        170:  ["Call out", "Backup", "Tactical Reload", "Autofire"],
+        85:  ["Night Vision", "Large mags", "Single Fire", "Impact"],
+        86:  ["Call out", "Large mags", "Single Fire", "Impact"],
+        89:  ["Night Vision", "Backup", "Single Fire", "Impact"],
+        90:  ["Call out", "Backup", "Single Fire", "Impact"],
+        101:  ["Night Vision", "Large mags", "Tactical Reload", "Impact"],
+        102:  ["Call out", "Large mags", "Tactical Reload", "Impact"],
+        105:  ["Night Vision", "Backup", "Tactical Reload", "Impact"],
+        106:  ["Call out", "Backup", "Tactical Reload", "Impact"],
+
+       
         
         /*
         7 :  ["Night Vision", "Large mags", "Single Fire"],
