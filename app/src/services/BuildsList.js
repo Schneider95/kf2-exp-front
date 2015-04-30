@@ -165,7 +165,7 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         25 : ["Healing Surge", "Combatant", "Lacerate"],
         89 : ["Healing Surge", "Armament", "Regeneration", "Vaccination"],
         153 : ["Healing Surge", "Armament", "Regeneration", "Acidic compound"],
-        160 : ["Healing Surge", "Armament", "Regeneration", "Vaccination", "Zed Time Sedative"],
+        601 : ["Healing Surge", "Armament", "Regeneration", "Vaccination", "Zed Time Sedative"],
           
         /*
         
