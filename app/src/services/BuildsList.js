@@ -290,12 +290,11 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         1 :  ["Bulk Ammo"],
         2 :  ["Night Vision"],
         
+        5 :  ["Bulk Ammo", "Frenzy"],
+        9 :  ["Bulk Ammo", "Fake Out"],
+        6 :  ["Night Vision", "Frenzy"],
+        10 :  ["Night Vision", "Fake Out"],
         /*
-        3 :  ["Bulk Ammo", "Frenzy"],
-        4 :  ["Bulk Ammo", "Fake Out"],
-        5 :  ["Night Vision", "Frenzy"],
-        6 :  ["Night Vision", "Fake Out"],
-        
         7 :  ["Bulk Ammo", "Frenzy", "Weapon Handling"],
         8 :  ["Bulk Ammo", "Frenzy", "Weapon Handling"],
         9 :  ["Bulk Ammo", "Fake Out", "Formidable"],
