@@ -294,16 +294,16 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         9 :  ["Bulk Ammo", "Fake Out"],
         6 :  ["Night Vision", "Frenzy"],
         10 :  ["Night Vision", "Fake Out"],
-        /*
-        7 :  ["Bulk Ammo", "Frenzy", "Weapon Handling"],
-        8 :  ["Bulk Ammo", "Frenzy", "Weapon Handling"],
-        9 :  ["Bulk Ammo", "Fake Out", "Formidable"],
-        10 : ["Bulk Ammo", "Fake Out", "Formidable"],
-        11 : ["Night Vision", "Frenzy", "Weapon Handling"],
-        12 : ["Night Vision", "Frenzy", "Weapon Handling"],
-        13 : ["Night Vision", "Fake Out", "Formidable"],
-        14 : ["Night Vision", "Fake Out", "Formidable"],
-                        
+        
+        21 : ["Bulk Ammo", "Frenzy", "Weapon Handling"],
+        37 : ["Bulk Ammo", "Frenzy", "Formidable"],
+        25 : ["Bulk Ammo", "Fake Out", "Weapon Handling"],
+        41 : ["Bulk Ammo", "Fake Out", "Formidable"],
+        22 : ["Night Vision", "Frenzy", "Weapon Handling"],
+        38 : ["Night Vision", "Frenzy", "Formidable"],
+        26 : ["Night Vision", "Fake Out", "Weapon Handling"],
+        42 : ["Night Vision", "Fake Out", "Formidable"],
+        /*                
         15 : ["Bulk Ammo", "Frenzy", "Weapon Handling", "Take Cover"],
         16 : ["Bulk Ammo", "Frenzy", "Weapon Handling", "Intimidate"],
         17 : ["Bulk Ammo", "Frenzy", "Formidable", "Take Cover"],
