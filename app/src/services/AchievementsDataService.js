@@ -4,21 +4,36 @@ module.factory('AchievementsDataService', ['BackEndRequestService', function (Ba
 
 
     var service = {
-      getAchievementsList: function () {
-        var getAchievementsListPromise = function () {
-          BackEndRequestService.getAchievementsList()
+      getAchievementsClassicList: function () {
+        var getAchievementsClassicListPromise = function () {
+          BackEndRequestService.getAchievementsClassicList()
                   .then(function (success) {
                    
-                    service.achievements = success;
+                    service.achievementsClassic = success;
 
                   }, function (error) {
                     console.log(error);
                   });
         };
 
-        return getAchievementsListPromise();
+        return getAchievementsClassicListPromise();
       },
-      achievements: []
+      getAchievementsMapsList: function () {
+        var getAchievementsMapsListPromise = function () {
+          BackEndRequestService.getAchievementsMapsList()
+                  .then(function (success) {
+                   
+                    service.achievementsMaps = success;
+
+                  }, function (error) {
+                    console.log(error);
+                  });
+        };
+
+        return getAchievementsMapsListPromise();
+      },
+      achievementsClassic: [],
+      achievementsMaps: []
     };
 
 

@@ -152,19 +152,20 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         */
       },
       medic: {
-        1 :  ["Healing Surge"],
-        2 :  ["Enforcer"],
-        5 :  ["Healing Surge", "Combatant"], // nems avait pris les deux skills de gauche
-        21 :  ["Healing Surge", "Combatant", "Regeneration"], // nems avait pris ces trois skills  et ca indiquait 21
+        1 : ["Healing Surge"],
+        2 : ["Enforcer"],
+        
+        5 : ["Healing Surge", "Combatant"],
+        
+        21 : ["Healing Surge", "Combatant", "Regeneration"],
         25 : ["Healing Surge", "Combatant", "Lacerate"],
+        
         89 : ["Healing Surge", "Armament", "Regeneration", "Vaccination"],
         153 : ["Healing Surge", "Armament", "Regeneration", "Acidic compound"],
+        
         601 : ["Healing Surge", "Armament", "Regeneration", "Vaccination", "Zed Time Sedative"],
           
         /*
-        
-        
-        
         4 :  ["Healing Surge", "Armament"],
         //5 :  ["Enforcer", "Combatant"],
         6 :  ["Enforcer", "Armament"],

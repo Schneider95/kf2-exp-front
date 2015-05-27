@@ -55,7 +55,7 @@
             <tr class="trOdd">
               <td>Achievements</td>
               <td ng-repeat="player in ctrl.getPlayers() track by $index">
-                {{player.nb_achievements}} / {{ctrl.getNumberOfAchievements()}}
+                {{player.nb_achievements}} / {{ctrl.getNumberOfAchievementsTotal()}}
               </td>
             </tr>
             <tr class="trEven">
@@ -122,50 +122,61 @@
             <tr class="trOdd">
               <td>Medic</td>
               <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                  ng-bind="player.medic_level" class="perk05"
-                  ng-class="{perk6: player.medic_level == '6+' || player.medic_level == '6'}">
+                  ng-bind="player.medic_level">
               </td>
             </tr>
             <tr class="trEven">
               <td>Sharpshooter</td>
               <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                  ng-bind="player.sharpshooter_level" class="perk05"
-                  ng-class="{perk6: player.sharpshooter_level == '6+' || player.sharpshooter_level == '6'}">
+                  ng-bind="player.sharpshooter_level">
               </td>
             </tr>
             <tr class="trOdd">
               <td>Support</td>
               <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                  ng-bind="player.support_level" class="perk05"
-                  ng-class="{perk6: player.support_level == '6+' || player.support_level == '6'}">
+                  ng-bind="player.support_level">
               </td>
             </tr>
             <tr class="trEven">
               <td>Commando</td>
               <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                  ng-bind="player.commando_level" class="perk05"
-                  ng-class="{perk6: player.commando_level == '6+' || player.commando_level == '6'}">
+                  ng-bind="player.commando_level">
               </td>
             </tr>
             <tr class="trOdd">
               <td>Berzerk</td>
               <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                  ng-bind="player.berzerk_level" class="perk05"
-                  ng-class="{perk6: player.berzerk_level == '6+' || player.berzerk_level == '6'}">
+                  ng-bind="player.berzerk_level">
               </td>
             </tr>
             <tr class="trEven">
               <td>Firebug</td>
               <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                  ng-bind="player.firebug_level" class="perk05"
-                  ng-class="{perk6: player.firebug_level == '6+' || player.firebug_level == '6'}">
+                  ng-bind="player.firebug_level">
               </td>
             </tr>
             <tr class="trOdd">
               <td>Demolitions</td> 
               <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                  ng-bind="player.demolitions_level" class="perk05"
-                  ng-class="{perk6: player.demolitions_level == '6+' || player.demolitions_level == '6'}">
+                  ng-bind="player.demolitions_level">
+              </td>
+            </tr>
+            <tr class="trEven">
+              <td>Martial Artist</td> 
+              <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  ng-bind="player.martial_artist_level">
+              </td>
+            </tr>
+            <tr class="trOdd">
+              <td>Gunslinger</td> 
+              <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  ng-bind="player.gunslinger_level">
+              </td>
+            </tr>
+            <tr class="trEven">
+              <td>SWAT</td> 
+              <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  ng-bind="player.swat_level">
               </td>
             </tr>
           </tbody>
@@ -279,7 +290,7 @@
               </td>
             </tr>
             <tr class="trOdd">
-              <td>Achievements Unlocked</td>
+              <td>Achievements Maps</td>
               <td colspan="4" 
                   ng-repeat="player in ctrl.getPlayers() track by $index">
                 {{player.nb_achievements_maps}} / {{ctrl.getNumberOfAchievementsMaps()}}
@@ -288,8 +299,60 @@
             <tr>
               <td class="emptyRow"></td>
             </tr>
-            <tr ng-repeat="(mapKey, mapObject) in ctrl.getMapsList() track by $index"  ng-class-odd="'trOdd'" ng-class-even="'trEven'"
+            <tr ng-repeat="(mapKey, mapObject) in ctrl.getAchievementsMapsList() track by $index"  ng-class-odd="'trOdd'" ng-class-even="'trEven'"
                 achievement-map >
+            </tr>
+          </tbody>
+        </table>
+      </md-tab>
+      <md-tab label="Achievements">
+        <br>
+        <table class="table table-bordered table-striped tableAchivements">
+          <thead>
+            <tr>
+              <td></td>
+              <td class="tdImgPlayer"  colspan="4" 
+                  ng-repeat="player in ctrl.getPlayers() track by $index">
+                <div layout="row" layout-sm="column" 
+                     layout-align="space-around">
+                  <md-progress-circular ng-show="player.updating"  
+                                        md-mode="indeterminate">
+
+                  </md-progress-circular>
+                </div>
+                <img  ng-hide="player.updating"  
+                      class="achievementsImgAvatar" 
+                      src="{{player.avatar_medium}}"/>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="trOdd">
+              <td>Name</td>
+              <td colspan="4"
+                  ng-repeat="player in ctrl.getPlayers() track by $index"
+                  ng-bind="player.steam_name">
+              </td>
+            </tr>
+            <tr class="trEven">
+              <td>Update state</td>
+              <td colspan="4" 
+                  ng-repeat="player in ctrl.getPlayers() track by $index"
+                  ng-bind="player.update_state">
+              </td>
+            </tr>
+            <tr class="trOdd">
+              <td>Other Achievements</td>
+              <td colspan="4" 
+                  ng-repeat="player in ctrl.getPlayers() track by $index">
+                {{player.nb_achievements - player.nb_achievements_maps}} / {{ctrl.getNumberOfAchievementsClassic()}}
+              </td>
+            </tr>
+            <tr>
+              <td class="emptyRow"></td>
+            </tr>
+            <tr ng-repeat="(achievemementKey, achievemementObject) in ctrl.getAchievementsClassicList() track by $index"  
+                ng-class-odd="'trOdd'" ng-class-even="'trEven'" achievement-classic>
             </tr>
           </tbody>
         </table>
