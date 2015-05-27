@@ -1,8 +1,13 @@
 <td ng-bind="achievemementObject"></td>
 <td ng-repeat="player in ctrl.getPlayers() track by $index">
-  <span class="label" 
-        ng-class="{ 'achievementDone': player.player_achievements[achievemementKey] === '1', 
-                    'achievementNotDone': player.player_achievements[achievemementKey] === undefined}">
-    Done
+  <span ng-show="player.player_achievements[achievemementKey] === '1'" 
+        class="achievementDone">
+    Achieved
   </span>
+
+  <span ng-show="player.player_achievements[achievemementKey] === undefined" 
+        class="achievementNotDone">
+    Not Achieved
+  </span>
+
 </td>

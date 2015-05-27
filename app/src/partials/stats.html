@@ -311,7 +311,7 @@
           <thead>
             <tr>
               <td></td>
-              <td class="tdImgPlayer"  colspan="4" 
+              <td class="tdImgPlayer" 
                   ng-repeat="player in ctrl.getPlayers() track by $index">
                 <div layout="row" layout-sm="column" 
                      layout-align="space-around">
@@ -329,21 +329,21 @@
           <tbody>
             <tr class="trOdd">
               <td>Name</td>
-              <td colspan="4"
+              <td 
                   ng-repeat="player in ctrl.getPlayers() track by $index"
                   ng-bind="player.steam_name">
               </td>
             </tr>
             <tr class="trEven">
               <td>Update state</td>
-              <td colspan="4" 
+              <td 
                   ng-repeat="player in ctrl.getPlayers() track by $index"
                   ng-bind="player.update_state">
               </td>
             </tr>
             <tr class="trOdd">
               <td>Other Achievements</td>
-              <td colspan="4" 
+              <td 
                   ng-repeat="player in ctrl.getPlayers() track by $index">
                 {{player.nb_achievements - player.nb_achievements_maps}} / {{ctrl.getNumberOfAchievementsClassic()}}
               </td>

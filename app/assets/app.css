@@ -184,6 +184,10 @@ td {
   color: #eee;
 }
 
+.achievementNotDone {
+  color: #eee;
+}
+
 .tdAchievementRight {
   border-right: 1px solid #000;
 }
