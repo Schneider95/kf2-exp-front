@@ -79,8 +79,15 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         6 :  ["Supplier", "Fortitude"],
         10 :  ["Supplier", "Regeneration"],
         
-        37 : ["Ammo", "Fortitude", "Tactical Reload"], // hichem avait ses trois skills et cela indiquait 37
-        
+        21 : ["Ammo", "Fortitude", "Bombard"],
+        22 : ["Supplier", "Fortitude", "Bombard"],
+        25 : ["Ammo", "Regeneration", "Bombard"],
+        26 : ["Supplier", "Regeneration", "Bombard"],
+        37 : ["Ammo", "Fortitude", "Tactical Reload"],
+        38 : ["Supplier", "Fortitude", "Tactical Reload"],
+        41 : ["Ammo", "Regeneration", "Tactical Reload"],
+        42 : ["Supplier", "Regeneration", "Tactical Reload"],
+
         102 : ["Ammo", "Fortitude", "Tactical Reload", "Strength"],
         150 : ["Ammo", "Fortitude", "Tactical Reload", "Tenacity"],
         149 : ["Ammo", "Fortitude", "Bombard", "Tenacity"],
