@@ -88,11 +88,23 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         41 : ["Ammo", "Regeneration", "Tactical Reload"],
         42 : ["Supplier", "Regeneration", "Tactical Reload"],
 
-        102 : ["Ammo", "Fortitude", "Tactical Reload", "Strength"],
-        150 : ["Ammo", "Fortitude", "Tactical Reload", "Tenacity"],
+        85 : ["Ammo", "Fortitude", "Bombard", "Strength"],
+        86 : ["Supplier", "Fortitude", "Bombard", "Strength"],
+        89 : ["Ammo", "Regeneration", "Bombard", "Strength"],
+        90 : ["Supplier", "Regeneration", "Bombard", "Strength"],
+        101 : ["Ammo", "Fortitude", "Tactical Reload", "Strength"],
+        102 : ["Supplier", "Fortitude", "Tactical Reload", "Strength"],
+        105 : ["Ammo", "Regeneration", "Tactical Reload", "Strength"],
+        106 : ["Supplier", "Regeneration", "Tactical Reload", "Strength"],
         149 : ["Ammo", "Fortitude", "Bombard", "Tenacity"],
-        
-        
+        150 : ["Supplier", "Fortitude", "Bombard", "Tenacity"],
+        153 : ["Ammo", "Regeneration", "Bombard", "Tenacity"],
+        154 : ["Supplier", "Regeneration", "Bombard", "Tenacity"],
+        165 : ["Ammo", "Fortitude", "Tactical Reload", "Tenacity"],
+        166 : ["Supplier", "Fortitude", "Tactical Reload", "Tenacity"],
+        169 : ["Ammo", "Regeneration", "Tactical Reload", "Tenacity"],
+        170 : ["Supplier", "Regeneration", "Tactical Reload", "Tenacity"],
+
         /*
         3 :  ["Ammo", "Fortitude"],
         4 :  ["Ammo", "Regeneration"],
