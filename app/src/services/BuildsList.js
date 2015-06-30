@@ -144,7 +144,10 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         2 : ["Enforcer"],
         
         5 : ["Healing Surge", "Combatant"],
-        
+        6 : ["Enforcer", "Combatant"],
+        9 : ["Healing Surge", "Armament"],
+        10 : ["Enforcer", "Armament"],
+
         21 : ["Healing Surge", "Combatant", "Regeneration"],
         25 : ["Healing Surge", "Combatant", "Lacerate"],
         
@@ -154,11 +157,6 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         601 : ["Healing Surge", "Armament", "Regeneration", "Vaccination", "Zed Time Sedative"],
           
         /*
-        4 :  ["Healing Surge", "Armament"],
-        //5 :  ["Enforcer", "Combatant"],
-        6 :  ["Enforcer", "Armament"],
-        
-
         
         8 :  ["Healing Surge", "Combatant", "Lacerate"],
         9 :  ["Healing Surge", "Armament", "Regeneration"],
@@ -174,7 +172,7 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         18 : ["Healing Surge", "Combatant", "Lacerate", "Acidic compound"],
         19 : ["Healing Surge", "Armament", "Regeneration", "Vaccination"],
         20 : ["Healing Surge", "Armament", "Regeneration", "Acidic compound"],
-        //21 : ["Healing Surge", "Armament", "Lacerate", "Vaccination"],
+        21 : ["Healing Surge", "Armament", "Lacerate", "Vaccination"],
         22 : ["Healing Surge", "Armament", "Lacerate", "Acidic compound"],
         23 : ["Enforcer", "Combatant", "Regeneration", "Vaccination"],
         24 : ["Enforcer", "Combatant", "Regeneration", "Acidic compound"],
