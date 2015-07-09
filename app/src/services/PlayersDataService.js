@@ -112,7 +112,7 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
           BackEndRequestService.getProfileDataFromSteamAPI(steamId).then(
                   function (success) {
                     if (success.communityvisibilitystate === 3) {
-                      service.registeringPlayer.message = 'Player have a public profile. Checking if a have Killing Floor 2...';
+                      service.registeringPlayer.message = 'Player have a public profile. Checking if the player got Killing Floor 2...';
                       return checkIfPlayerHaveGamePromise();
                     } else {
                       service.registeringPlayer.message = 'Player don\'t have a public profile. Unable to retrieve stats.';
