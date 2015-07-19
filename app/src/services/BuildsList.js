@@ -147,9 +147,15 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         6 : ["Enforcer", "Combatant"],
         9 : ["Healing Surge", "Armament"],
         10 : ["Enforcer", "Armament"],
-
+        
         21 : ["Healing Surge", "Combatant", "Regeneration"],
-        25 : ["Healing Surge", "Combatant", "Lacerate"],
+        22 : ["Enforcer", "Combatant", "Regeneration"],
+        25 : ["Healing Surge", "Armament", "Regeneration"],
+        26 : ["Enforcer", "Armament", "Regeneration"],
+        37 : ["Healing Surge", "Combatant", "Lacerate"],
+        38 : ["Enforcer", "Combatant", "Lacerate"],
+        41 : ["Healing Surge", "Armament", "Lacerate"],
+        42 : ["Enforcer", "Armament", "Lacerate"],
         
         89 : ["Healing Surge", "Armament", "Regeneration", "Vaccination"],
         153 : ["Healing Surge", "Armament", "Regeneration", "Acidic compound"],
