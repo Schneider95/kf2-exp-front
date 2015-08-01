@@ -4,21 +4,6 @@ module.controller('RankingController', ['BackEndRequestService', 'StatsDataServi
 
   self.selectedStat = '';
 
-  self.toppings = [
-    { category: 'meat', name: 'Pepperoni' },
-    { category: 'meat', name: 'Sausage' },
-    { category: 'meat', name: 'Ground Beef' },
-    { category: 'meat', name: 'Bacon' },
-    { category: 'meat', name: 'Pepperoni' },
-    { category: 'meat', name: 'Sausage' },
-    { category: 'meat', name: 'Ground Beef' },
-    { category: 'meat', name: 'Bacon' },
-    { category: 'meat', name: 'Pepperoni' },
-    { category: 'meat', name: 'Sausage' },
-    { category: 'meat', name: 'Ground Beef' },
-    { category: 'meat', name: 'Bacon' }
-  ];
-
   self.getStatsList = function() {
     console.log(StatsDataService.stats);
     return StatsDataService.stats;

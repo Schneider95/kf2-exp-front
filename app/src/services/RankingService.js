@@ -14,17 +14,17 @@ module.factory('RankingService', ['BackEndRequestService', function (BackEndRequ
       },
       getRankingByStat: function () {
         BackEndRequestService
-                .getRankingByStat(service.statToRetrieve, service.statsRetrieved.length, service.nbPlayerToLoad)
-                .then(
-                        function (success) {
-                          angular.forEach(success.data, function (stat) {
-                            service.statsRetrieved.push(stat);
-                          });
-                        },
-                        function (error) {
+          .getRankingByStat(service.statToRetrieve, service.statsRetrieved.length, service.nbPlayerToLoad)
+          .then(
+            function (success) {
+              angular.forEach(success.data, function (stat) {
+                service.statsRetrieved.push(stat);
+              });
+            },
+            function (error) {
 
-                        }
-                );
+            }
+          );
       }
     }
 
