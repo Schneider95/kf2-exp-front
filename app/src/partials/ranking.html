@@ -16,7 +16,7 @@
       <table>
       <tr class="rankingTr" flex ng-repeat="item in ctrl.getStatsRetrieved() track by $index" ng-class-odd="'trOdd'" ng-class-even="'trEven'">
         <td>{{$index + 1}}</td>
-        <td class="steamName" ng-click="ctrl.addPlayerToStatPage(item.id)">{{item.steamName}}</td>
+        <td class="steamName" ng-click="ctrl.addPlayerToStatPage(item.playerId)">{{item.steamName}}</td>
         <td>{{item.value}}</td>
       </tr>
     </table>
