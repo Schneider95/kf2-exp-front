@@ -5,7 +5,6 @@ module.controller('RankingController', ['BackEndRequestService', 'StatsDataServi
   self.selectedStat = '';
 
   self.getStatsList = function() {
-    console.log(StatsDataService.stats);
     return StatsDataService.stats;
   };
 

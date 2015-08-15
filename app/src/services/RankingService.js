@@ -4,7 +4,6 @@ module = angular.module('kf2App');
 module.factory('RankingService', ['BackEndRequestService', function (BackEndRequestService) {
 
     var service = {
-      nbPlayerToLoad: 60,
       statsRetrieved: [],
       statToRetrieve: '',
       changeStat: function (statToRetrieve) {
@@ -14,7 +13,7 @@ module.factory('RankingService', ['BackEndRequestService', function (BackEndRequ
       },
       getRankingByStat: function () {
         BackEndRequestService
-          .getRankingByStat(service.statToRetrieve, service.statsRetrieved.length, service.nbPlayerToLoad)
+          .getRankingByStat(service.statToRetrieve)
           .then(
             function (success) {
               angular.forEach(success.data, function (stat) {
@@ -26,7 +25,7 @@ module.factory('RankingService', ['BackEndRequestService', function (BackEndRequ
             }
           );
       }
-    }
+    };
 
     return service;
   }]);

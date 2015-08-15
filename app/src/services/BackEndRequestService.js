@@ -112,8 +112,8 @@ module.factory('BackEndRequestService', ['$http', '$q', 'BackEndUrl', function (
                   return $q.reject(response.data);
                 });
       },
-      getRankingByStat: function (statName, nbPlayerLoaded, nbPlayerToLoad) {
-        return $http.get(BackEndUrl + 'getStatsRanking?statName=' + statName + '&nbPlayerLoaded=' + nbPlayerLoaded + '&nbPlayerToLoad=' + nbPlayerToLoad);
+      getRankingByStat: function (statName) {
+        return $http.get(BackEndUrl + 'getStatsRanking?statName=' + statName);
       },
       
       getStatsList: function () {
