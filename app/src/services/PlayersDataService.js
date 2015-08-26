@@ -195,7 +195,7 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
            service.players[id].berzerk_level = '0';
         } else if (service.players[id].player_stats['1_10'] >= 262000 && service.players[id].player_stats['1_10'] < 524000 ) {
            service.players[id].berzerk_level = '1';
-        } else if (service.players[id].player_stats['1_10'] >= 525175 && service.players[id].player_stats['1_10'] < 786000 ) {
+        } else if (service.players[id].player_stats['1_10'] >= 524000 && service.players[id].player_stats['1_10'] < 786000 ) {
            service.players[id].berzerk_level = '2';
         } else if (service.players[id].player_stats['1_10'] >= 786000 && service.players[id].player_stats['1_10'] < 1048000 ) {
            service.players[id].berzerk_level = '3';
@@ -251,7 +251,7 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
            service.players[id].commando_level = '0';
         } else if (service.players[id].player_stats['1_1'] >= 262000 && service.players[id].player_stats['1_1'] < 524000 ) {
            service.players[id].commando_level = '1';
-        } else if (service.players[id].player_stats['1_1'] >= 525175 && service.players[id].player_stats['1_1'] < 786000 ) {
+        } else if (service.players[id].player_stats['1_1'] >= 524000 && service.players[id].player_stats['1_1'] < 786000 ) {
            service.players[id].commando_level = '2';
         } else if (service.players[id].player_stats['1_1'] >= 786000 && service.players[id].player_stats['1_1'] < 1048000 ) {
            service.players[id].commando_level = '3';
@@ -270,7 +270,7 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
         } else if (service.players[id].player_stats['1_1'] >= 2620000 && service.players[id].player_stats['1_1'] < 2882000 ) {
            service.players[id].commando_level = '10';
         } else if (service.players[id].player_stats['1_1'] >= 2882000 && service.players[id].player_stats['1_1'] < 3144000 ) {
-           service.players[id].medic_level = '11';
+           service.players[id].commando_level = '11';
         } else if (service.players[id].player_stats['1_1'] >= 3144000 && service.players[id].player_stats['1_1'] < 3406000 ) {
            service.players[id].commando_level = '12';
         } else if (service.players[id].player_stats['1_1'] >= 3406000 && service.players[id].player_stats['1_1'] < 3668000 ) {
@@ -303,46 +303,114 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
       },
       setDemolitionsLevel: function (id) {
 
-        if (service.players[id].player_stats['ExplosivesDamage'] >= 11000000) {
-          service.players[id].demolitions_level = '6+';
-        } else if (service.players[id].player_stats['ExplosivesDamage'] >= 5500000) {
-          service.players[id].demolitions_level = '6';
-        } else if (service.players[id].player_stats['ExplosivesDamage'] >= 3500000) {
-          service.players[id].demolitions_level = '5';
-        } else if (service.players[id].player_stats['ExplosivesDamage'] >= 1500000) {
-          service.players[id].demolitions_level = '4';
-        } else if (service.players[id].player_stats['ExplosivesDamage'] >= 500000) {
-          service.players[id].demolitions_level = '3';
-        } else if (service.players[id].player_stats['ExplosivesDamage'] >= 100000) {
-          service.players[id].demolitions_level = '2';
-        } else if (service.players[id].player_stats['ExplosivesDamage'] >= 25000) {
-          service.players[id].demolitions_level = '1';
-        } else if (service.players[id].player_stats['ExplosivesDamage'] < 25000) {
-          service.players[id].demolitions_level = '0';
-        } else {
-          service.players[id].demolitions_level = '0';
+        if (service.players[id].player_stats['1_60'] < 262000) {
+           service.players[id].demolitions_level = '0';
+        } else if (service.players[id].player_stats['1_60'] >= 262000 && service.players[id].player_stats['1_60'] < 524000 ) {
+           service.players[id].demolitions_level = '1';
+        } else if (service.players[id].player_stats['1_60'] >= 524000 && service.players[id].player_stats['1_60'] < 786000 ) {
+           service.players[id].demolitions_level = '2';
+        } else if (service.players[id].player_stats['1_60'] >= 786000 && service.players[id].player_stats['1_60'] < 1048000 ) {
+           service.players[id].demolitions_level = '3';
+        } else if (service.players[id].player_stats['1_60'] >= 1048000 && service.players[id].player_stats['1_60'] < 1312000 ) {
+           service.players[id].demolitions_level = '4';
+        } else if (service.players[id].player_stats['1_60'] >= 1312000 && service.players[id].player_stats['1_60'] < 1572000 ) {
+           service.players[id].demolitions_level = '5';
+        } else if (service.players[id].player_stats['1_60'] >= 1572000 && service.players[id].player_stats['1_60'] < 1834000 ) {
+           service.players[id].demolitions_level = '6';
+        } else if (service.players[id].player_stats['1_60'] >= 1834000 && service.players[id].player_stats['1_60'] < 2096000 ) {
+           service.players[id].demolitions_level = '7';
+        } else if (service.players[id].player_stats['1_60'] >= 2096000 && service.players[id].player_stats['1_60'] < 2358000 ) {
+           service.players[id].demolitions_level = '8';
+        } else if (service.players[id].player_stats['1_60'] >= 2358000 && service.players[id].player_stats['1_60'] < 2620000 ) {
+           service.players[id].demolitions_level = '9';
+        } else if (service.players[id].player_stats['1_60'] >= 2620000 && service.players[id].player_stats['1_60'] < 2882000 ) {
+           service.players[id].demolitions_level = '10';
+        } else if (service.players[id].player_stats['1_60'] >= 2882000 && service.players[id].player_stats['1_60'] < 3144000 ) {
+           service.players[id].demolitions_level = '11';
+        } else if (service.players[id].player_stats['1_60'] >= 3144000 && service.players[id].player_stats['1_60'] < 3406000 ) {
+           service.players[id].demolitions_level = '12';
+        } else if (service.players[id].player_stats['1_60'] >= 3406000 && service.players[id].player_stats['1_60'] < 3668000 ) {
+           service.players[id].demolitions_level = '13';
+        } else if (service.players[id].player_stats['1_60'] >= 3668000 && service.players[id].player_stats['1_60'] < 3930000 ) {
+           service.players[id].demolitions_level = '14';
+        } else if (service.players[id].player_stats['1_60'] >= 3930000 && service.players[id].player_stats['1_60'] < 4192000 ) {
+           service.players[id].demolitions_level = '15';
+        } else if (service.players[id].player_stats['1_60'] >= 4192000 && service.players[id].player_stats['1_60'] < 4454000 ) {
+           service.players[id].demolitions_level = '16';
+        } else if (service.players[id].player_stats['1_60'] >= 4454000 && service.players[id].player_stats['1_60'] < 4716000 ) {
+           service.players[id].demolitions_level = '17';
+        } else if (service.players[id].player_stats['1_60'] >= 4716000 && service.players[id].player_stats['1_60'] < 4978000 ) {
+           service.players[id].demolitions_level = '18';
+        } else if (service.players[id].player_stats['1_60'] >= 4978000 && service.players[id].player_stats['1_60'] < 5240000 ) {
+           service.players[id].demolitions_level = '19';
+        } else if (service.players[id].player_stats['1_60'] >= 5240000 && service.players[id].player_stats['1_60'] < 5502000 ) {
+           service.players[id].demolitions_level = '20';
+        } else if (service.players[id].player_stats['1_60'] >= 5502000 && service.players[id].player_stats['1_60'] < 5764000 ) {
+           service.players[id].demolitions_level = '21';
+        } else if (service.players[id].player_stats['1_60'] >= 5764000 && service.players[id].player_stats['1_60'] < 6026000 ) {
+           service.players[id].demolitions_level = '22';
+        } else if (service.players[id].player_stats['1_60'] >= 6026000 && service.players[id].player_stats['1_60'] < 6288000 ) {
+           service.players[id].demolitions_level = '23';
+        } else if (service.players[id].player_stats['1_60'] >= 6288000 && service.players[id].player_stats['1_60'] < 6550000 ) {
+           service.players[id].demolitions_level = '24';
+        } else if (service.players[id].player_stats['1_60'] >= 6550000) {
+           service.players[id].demolitions_level = '25';
         }
       },
       setFirebugLevel: function (id) {
 
-        if (service.players[id].player_stats['FlameThrowerDamage'] >= 11000000) {
-          service.players[id].firebug_level = '6+';
-        } else if (service.players[id].player_stats['FlameThrowerDamage'] >= 5500000) {
-          service.players[id].firebug_level = '6';
-        } else if (service.players[id].player_stats['FlameThrowerDamage'] >= 3500000) {
-          service.players[id].firebug_level = '5';
-        } else if (service.players[id].player_stats['FlameThrowerDamage'] >= 1500000) {
-          service.players[id].firebug_level = '4';
-        } else if (service.players[id].player_stats['FlameThrowerDamage'] >= 500000) {
-          service.players[id].firebug_level = '3';
-        } else if (service.players[id].player_stats['FlameThrowerDamage'] >= 100000) {
-          service.players[id].firebug_level = '2';
-        } else if (service.players[id].player_stats['FlameThrowerDamage'] >= 25000) {
-          service.players[id].firebug_level = '1';
-        } else if (service.players[id].player_stats['FlameThrowerDamage'] < 25000) {
-          service.players[id].firebug_level = '0';
-        } else {
-          service.players[id].firebug_level = '0';
+        if (service.players[id].player_stats['1_30'] < 262000) {
+           service.players[id].firebug_level = '0';
+        } else if (service.players[id].player_stats['1_30'] >= 262000 && service.players[id].player_stats['1_30'] < 524000 ) {
+           service.players[id].firebug_level = '1';
+        } else if (service.players[id].player_stats['1_30'] >= 524000 && service.players[id].player_stats['1_30'] < 786000 ) {
+           service.players[id].firebug_level = '2';
+        } else if (service.players[id].player_stats['1_30'] >= 786000 && service.players[id].player_stats['1_30'] < 1048000 ) {
+           service.players[id].firebug_level = '3';
+        } else if (service.players[id].player_stats['1_30'] >= 1048000 && service.players[id].player_stats['1_30'] < 1312000 ) {
+           service.players[id].firebug_level = '4';
+        } else if (service.players[id].player_stats['1_30'] >= 1312000 && service.players[id].player_stats['1_30'] < 1572000 ) {
+           service.players[id].firebug_level = '5';
+        } else if (service.players[id].player_stats['1_30'] >= 1572000 && service.players[id].player_stats['1_30'] < 1834000 ) {
+           service.players[id].firebug_level = '6';
+        } else if (service.players[id].player_stats['1_30'] >= 1834000 && service.players[id].player_stats['1_30'] < 2096000 ) {
+           service.players[id].firebug_level = '7';
+        } else if (service.players[id].player_stats['1_30'] >= 2096000 && service.players[id].player_stats['1_30'] < 2358000 ) {
+           service.players[id].firebug_level = '8';
+        } else if (service.players[id].player_stats['1_30'] >= 2358000 && service.players[id].player_stats['1_30'] < 2620000 ) {
+           service.players[id].firebug_level = '9';
+        } else if (service.players[id].player_stats['1_30'] >= 2620000 && service.players[id].player_stats['1_30'] < 2882000 ) {
+           service.players[id].firebug_level = '10';
+        } else if (service.players[id].player_stats['1_30'] >= 2882000 && service.players[id].player_stats['1_30'] < 3144000 ) {
+           service.players[id].firebug_level = '11';
+        } else if (service.players[id].player_stats['1_30'] >= 3144000 && service.players[id].player_stats['1_30'] < 3406000 ) {
+           service.players[id].firebug_level = '12';
+        } else if (service.players[id].player_stats['1_30'] >= 3406000 && service.players[id].player_stats['1_30'] < 3668000 ) {
+           service.players[id].firebug_level = '13';
+        } else if (service.players[id].player_stats['1_30'] >= 3668000 && service.players[id].player_stats['1_30'] < 3930000 ) {
+           service.players[id].firebug_level = '14';
+        } else if (service.players[id].player_stats['1_30'] >= 3930000 && service.players[id].player_stats['1_30'] < 4192000 ) {
+           service.players[id].firebug_level = '15';
+        } else if (service.players[id].player_stats['1_30'] >= 4192000 && service.players[id].player_stats['1_30'] < 4454000 ) {
+           service.players[id].firebug_level = '16';
+        } else if (service.players[id].player_stats['1_30'] >= 4454000 && service.players[id].player_stats['1_30'] < 4716000 ) {
+           service.players[id].firebug_level = '17';
+        } else if (service.players[id].player_stats['1_30'] >= 4716000 && service.players[id].player_stats['1_30'] < 4978000 ) {
+           service.players[id].firebug_level = '18';
+        } else if (service.players[id].player_stats['1_30'] >= 4978000 && service.players[id].player_stats['1_30'] < 5240000 ) {
+           service.players[id].firebug_level = '19';
+        } else if (service.players[id].player_stats['1_30'] >= 5240000 && service.players[id].player_stats['1_30'] < 5502000 ) {
+           service.players[id].firebug_level = '20';
+        } else if (service.players[id].player_stats['1_30'] >= 5502000 && service.players[id].player_stats['1_30'] < 5764000 ) {
+           service.players[id].firebug_level = '21';
+        } else if (service.players[id].player_stats['1_30'] >= 5764000 && service.players[id].player_stats['1_30'] < 6026000 ) {
+           service.players[id].firebug_level = '22';
+        } else if (service.players[id].player_stats['1_30'] >= 6026000 && service.players[id].player_stats['1_30'] < 6288000 ) {
+           service.players[id].firebug_level = '23';
+        } else if (service.players[id].player_stats['1_30'] >= 6288000 && service.players[id].player_stats['1_30'] < 6550000 ) {
+           service.players[id].firebug_level = '24';
+        } else if (service.players[id].player_stats['1_30'] >= 6550000) {
+           service.players[id].firebug_level = '25';
         }
       },
       setMedicLevel: function (id) {
@@ -351,7 +419,7 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
            service.players[id].medic_level = '0';
         } else if (service.players[id].player_stats['1_40'] >= 262000 && service.players[id].player_stats['1_40'] < 524000 ) {
            service.players[id].medic_level = '1';
-        } else if (service.players[id].player_stats['1_40'] >= 525175 && service.players[id].player_stats['1_40'] < 786000 ) {
+        } else if (service.players[id].player_stats['1_40'] >= 524000 && service.players[id].player_stats['1_40'] < 786000 ) {
            service.players[id].medic_level = '2';
         } else if (service.players[id].player_stats['1_40'] >= 786000 && service.players[id].player_stats['1_40'] < 1048000 ) {
            service.players[id].medic_level = '3';
@@ -407,7 +475,7 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
            service.players[id].support_level = '0';
         } else if (service.players[id].player_stats['1_20'] >= 262000 && service.players[id].player_stats['1_20'] < 524000 ) {
            service.players[id].support_level = '1';
-        } else if (service.players[id].player_stats['1_20'] >= 525175 && service.players[id].player_stats['1_20'] < 786000 ) {
+        } else if (service.players[id].player_stats['1_20'] >= 524000 && service.players[id].player_stats['1_20'] < 786000 ) {
            service.players[id].support_level = '2';
         } else if (service.players[id].player_stats['1_20'] >= 786000 && service.players[id].player_stats['1_20'] < 1048000 ) {
            service.players[id].support_level = '3';
