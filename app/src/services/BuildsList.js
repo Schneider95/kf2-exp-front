@@ -275,6 +275,14 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         678 : ["Night Vision", "Frenzy", "Formidable", "Intimidate", "Zed Time Attack Strength"],
         681 : ["Bulk Ammo", "Fake Out", "Formidable", "Intimidate", "Zed Time Attack Strength"],
         682 : ["Night Vision", "Fake Out", "Formidable", "Intimidate", "Zed Time Attack Strength"],        
+      },
+      demolitions : {
+        1 : ["Grenade Supplier"],
+        2 : ["Contact"]
+      },
+      firebug : {
+        1 : ["Fully Stocked"],
+        2 : ["Flaritov"]
       }
     };
 

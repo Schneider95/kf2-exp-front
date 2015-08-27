@@ -248,6 +248,20 @@
                   build>
               </td>
             </tr>
+            <tr class="trOdd">
+              <td>Demolitions</td>
+              <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  build-data="ctrl.getBuildsList().demolitions[player.player_stats['1_61']]"
+                  build>
+              </td>
+            </tr>
+            <tr class="trEven">
+              <td>Firebug</td>
+              <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  build-data="ctrl.getBuildsList().firebug[player.player_stats['1_31']]"
+                  build>
+              </td>
+            </tr>
 
           </tbody>
         </table>
