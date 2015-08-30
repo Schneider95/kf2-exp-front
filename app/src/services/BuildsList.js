@@ -278,7 +278,12 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
       },
       demolitions : {
         1 : ["Grenade Supplier"],
-        2 : ["Contact"]
+        2 : ["Contact"],
+          
+        5 : ["Grenade Supplier", "Resistance"],
+        6 : ["Contact", "Resistance"],
+        9 : ["Grenade Supplier", "Sacrifice"],
+        10 : ["Contact", "Sacrifice"],
       },
       firebug : {
         1 : ["Fully Stocked"],
