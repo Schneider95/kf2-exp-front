@@ -284,6 +284,15 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         6 : ["Contact", "Resistance"],
         9 : ["Grenade Supplier", "Sacrifice"],
         10 : ["Contact", "Sacrifice"],
+        
+        21 : ["Grenade Supplier", "Resistance", "Door Traps"],
+        22 : ["Contact", "Resistance", "Door Traps"],
+        25 : ["Grenade Supplier", "Sacrifice", "Door Traps"],
+        26 : ["Contact", "Sacrifice", "Door Traps"],
+        37 : ["Grenade Supplier", "Resistance", "Siren Resistance"],
+        38 : ["Contact", "Resistance", "Siren Resistance"],
+        41 : ["Grenade Supplier", "Sacrifice", "Siren Resistance"],
+        42 : ["Contact", "Sacrifice", "Siren Resistance"],
       },
       firebug : {
         1 : ["Fully Stocked"],
