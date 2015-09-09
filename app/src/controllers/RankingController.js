@@ -24,6 +24,10 @@ module.controller('RankingController', ['BackEndRequestService', 'StatsDataServi
     PlayersDataService.addPlayer(id);
     $location.path( "/stats/"+ PlayersDataService.playersIdsString);
   };  
-  
+
+  self.getReadableTimePlayed = function(timePlayed) {
+    return parseInt(timePlayed / 60) + 'h';
+  };
+
   StatsDataService.getStatsList(); 
 }]);
