@@ -296,7 +296,12 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
       },
       firebug : {
         1 : ["Fully Stocked"],
-        2 : ["Flaritov"]
+        2 : ["Flaritov"],
+        
+        5 : ["Fully Stocked", "Fuse"],
+        6 : ["Flaritov", "Fuse"],
+        9 : ["Fully Stocked", "Heat Wave"],
+        10 : ["Flaritov", "Heat Wave"],
       }
     };
 
