@@ -302,6 +302,16 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         6 : ["Flaritov", "Fuse"],
         9 : ["Fully Stocked", "Heat Wave"],
         10 : ["Flaritov", "Heat Wave"],
+        
+        21 : ["Fully Stocked", "Fuse", "Zed Shrapnel"],
+        22 : ["Flaritov", "Fuse", "Zed Shrapnel"],
+        25 : ["Fully Stocked", "Heat Wave", "Zed Shrapnel"],
+        26 : ["Flaritov", "Heat Wave", "Zed Shrapnel"],
+        37 : ["Fully Stocked", "Fuse", "Zed Napalm"],
+        38 : ["Flaritov", "Fuse", "Zed Napalm"],
+        41 : ["Fully Stocked", "Heat Wave", "Zed Napalm"],
+        42 : ["Flaritov", "Heat Wave", "Zed Napalm"],
+        
       }
     };
 
