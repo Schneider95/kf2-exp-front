@@ -330,6 +330,22 @@ module.factory('BuildsList', ['BackEndRequestService', function (BackEndRequestS
         41 : ["Fully Stocked", "Heat Wave", "Zed Napalm"],
         42 : ["Flaritov", "Heat Wave", "Zed Napalm"],
         
+        85 : ["Fully Stocked", "Fuse", "Zed Shrapnel", "Range"],
+        86 : ["Flaritov", "Fuse", "Zed Shrapnel", "Range"],
+        89 : ["Fully Stocked", "Heat Wave", "Zed Shrapnel", "Range"],
+        90 : ["Flaritov", "Heat Wave", "Zed Shrapnel", "Range"],
+        101 : ["Fully Stocked", "Fuse", "Zed Napalm", "Range"],
+        102 : ["Flaritov", "Fuse", "Zed Napalm", "Range"],
+        105 : ["Fully Stocked", "Heat Wave", "Zed Napalm", "Range"],
+        106 : ["Flaritov", "Heat Wave", "Zed Napalm", "Range"],
+        149 : ["Fully Stocked", "Fuse", "Zed Shrapnel", "Splash Damage"],
+        150 : ["Flaritov", "Fuse", "Zed Shrapnel", "Splash Damage"],
+        153 : ["Fully Stocked", "Heat Wave", "Zed Shrapnel", "Splash Damage"],
+        154 : ["Flaritov", "Heat Wave", "Zed Shrapnel", "Splash Damage"],
+        166 : ["Fully Stocked", "Fuse", "Zed Napalm", "Splash Damage"],
+        166 : ["Flaritov", "Fuse", "Zed Napalm", "Splash Damage"],
+        169 : ["Fully Stocked", "Heat Wave", "Zed Napalm", "Splash Damage"],
+        170 : ["Flaritov", "Heat Wave", "Zed Napalm", "Splash Damage"],    
       }
     };
 
