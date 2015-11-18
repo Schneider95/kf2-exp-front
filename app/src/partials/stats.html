@@ -1,6 +1,27 @@
 <md-content flex  class="md-padding" id="content">
   <div layout="row">
-    <h2>Stats</h2>
+    <div flex-gt-sm="50" flex-sm="100">
+      <h2>Stats</h2>
+    </div>
+    <div flex-gt-sm="50" flex-sm="100">
+      <form ng-show="ctrl.getPlayersNameList().length" 
+            ng-submit="$event.preventDefault()">
+        <br>
+        <md-autocomplete
+          ng-disabled="ctrl.isDisabled"
+          md-no-cache="ctrl.noCache"
+          md-selected-item="ctrl.selectedItem"
+          md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+          md-search-text="ctrl.searchText"
+          md-selected-item-change="ctrl.selectedItemChange(item)"
+          md-items="item in ctrl.querySearch(ctrl.searchText)"
+          md-item-text="item.steamName"
+          placeholder="Search for a player name">
+          <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.steamName}}</span>
+        </md-autocomplete>
+        <br/>
+      </form>
+    </div>
   </div>
   <div layout="row" flex layout-sm="column" ng-show="ctrl.getNbPlayers() > 0">
     <md-tabs md-selected="selectedIndex" md-border-bottom md-dynamic-height>
@@ -420,6 +441,6 @@
     </md-tabs>
   </div>
   <div layout="row" flex layout-sm="column" ng-show="ctrl.getNbPlayers() === 0">
-    <p>Add players with the "Add player" page on the left menu</p>
+    <p>Add existing players to the stat page with the search bar.</p>
   </div>
 </md-content>

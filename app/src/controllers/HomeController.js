@@ -2,77 +2,66 @@ module.controller('HomeController', ['BackEndRequestService', 'PlayersDataServic
 
     var self = this;
 
-    function querySearch(query) {
-      return self.players.filter(createFilterFor(query));
-    }
-
-    function loadNews() {
-      BackEndRequestService.getLatestNews().then(
-              function (success) {
-                self.news = success.data;
-              },
-              function (error) {
-
-              }
-      );
-    }
-
-    function loadPlayers() {
-      BackEndRequestService.getPlayersList().then(
-              function (success) {
-                self.players = success.data;
-              },
-              function (error) {
-
-              }
-      );
-    }
-
-
-    function loadLastUpdatedPlayers() {
-      BackEndRequestService.getLastUpdatedPlayers().then(
-              function (success) {
-                self.loadLastUpdatedPlayers = success.data;
-              },
-              function (error) {
-
-              }
-      );
-    }
-
-    function searchTextChange(text) {
-      //$log.info('searchText ' + text);
-    }
-    function selectedItemChange(item) {
-      PlayersDataService.addPlayer(item.playerId);
-      $location.path("/stats/" + PlayersDataService.playersIdsString);
-    }
-
-    function createFilterFor(query) {
-      var lowercaseQuery = angular.lowercase(query);
-      return function filterFn(player) {
-        return (player.steamNameLowercase.indexOf(lowercaseQuery) !== -1);
-      };
-    }
-    
-    function addPlayerToStatPage(id) {
+    self.addPlayerToStatPage = function(id) {
       PlayersDataService.addPlayer(id);
-      $location.path("/stats/" + PlayersDataService.playersIdsString);
+      $location.path("/stats/" + PlayersDataService.playersIdsString, true);
     };
-    
-    
-    loadNews();
-    loadPlayers();
-    loadLastUpdatedPlayers();
+
+    self.getPlayersNameList = function() {
+      return PlayersDataService.playersNameList;
+    };
+
+    self.loadLastUpdatedPlayers = function() {
+      BackEndRequestService.getLastUpdatedPlayers().then(
+        function (success) {
+          self.loadLastUpdatedPlayers = success.data;
+        },
+        function (error) {
+
+        }
+      );
+    };
+
+    self.loadNews = function() {
+      BackEndRequestService.getLatestNews().then(
+        function (success) {
+          self.news = success.data;
+        },
+        function (error) {
+
+        }
+      );
+    };
+
+    self.loadPlayersNameList = function() {
+      if (0 === PlayersDataService.playersNameList.length) {
+        PlayersDataService.getPlayersNameList();
+      }
+    };
+
+    self.selectedItemChange = function(item) {
+      PlayersDataService.addPlayer(item.playerId);
+      $location.path("/stats/" + PlayersDataService.playersIdsString, true);
+    };
+
+    self.querySearch = function(query) {
+      var filter = function(query) {
+        var lowercaseQuery = angular.lowercase(query);
+        
+        return function filterFn(player) {
+          return (player.steamNameLowercase.indexOf(lowercaseQuery) !== -1);
+        };
+      };
+      
+      return self.getPlayersNameList().filter(filter(query));
+    };
+
+    self.loadNews();
+    self.loadPlayersNameList();
+    self.loadLastUpdatedPlayers();
 
     self.selectedItem = null;
     self.searchText = null;
-    self.querySearch = querySearch;
     self.simulateQuery = false;
-    self.isDisabled = false;
-    self.selectedItemChange = selectedItemChange;
-    self.searchTextChange = searchTextChange;
-    self.addPlayerToStatPage = addPlayerToStatPage;
-    
-       
+    self.isDisabled = false;      
   }]);

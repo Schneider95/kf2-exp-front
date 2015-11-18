@@ -38,6 +38,15 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
 
         return Math.floor(totalMinutes / 60) + 'h' + totalMinutes % 60 + 'm';
       },
+      getPlayersNameList: function() {
+        BackEndRequestService.getPlayersList().then(
+          function (success) {
+            service.playersNameList = success.data;
+          },
+          function (error) {
+          }
+        );
+      },
       loadPlayersFromUrl: function (playersIdsFromUrlString) {
 
         var playersIdsFromUrlArray = playersIdsFromUrlString.split(",");
@@ -66,6 +75,7 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
       players: {},
       playersIdsString: '',
       playersIdsArray: [],
+      playersNameList: [],
       removePlayer: function (id) {
 
         delete service.players[id];

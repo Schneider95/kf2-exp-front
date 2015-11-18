@@ -63,3 +63,18 @@ module.config(function($mdThemingProvider, $mdIconProvider){
     .icon("svg-ranking", "./bower_components/material-design-icons/toggle/svg/production/ic_star_24px.svg", 48)
     .icon("svg-mail", "./bower_components/material-design-icons/content/svg/production/ic_mail_48px.svg", 48)
 });
+
+module.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {
+  var original = $location.path;
+  $location.path = function (path, reload) {
+    if (reload === false) {
+      var lastRoute = $route.current;
+      var un = $rootScope.$on('$locationChangeSuccess', function () {
+        $route.current = lastRoute;
+        un();
+      });
+    }
+
+    return original.apply($location, [path]);
+  };
+}])
