@@ -9,9 +9,9 @@ module.controller('AppController', ['$mdSidenav', '$mdBottomSheet', 'PlayersData
         icon: 'svg-home',
         link: '/'
       },{
-        name: 'Add player',
+        name: 'Register player',
         icon: 'svg-person-add',
-        link: '/addPlayer'
+        link: '/registerPlayer'
       },{
         name: 'Stats page',
         icon: 'svg-assessment',

@@ -19,9 +19,9 @@ module.config(function($routeProvider) {
     templateUrl: partialsPath + 'home.html',
     controller: 'HomeController as ctrl'
   })
-  .when('/addPlayer', {
-    templateUrl: partialsPath + 'addPlayer.html',
-    controller: 'AddPlayerController as ctrl'
+  .when('/registerPlayer', {
+    templateUrl: partialsPath + 'registerPlayer.html',
+    controller: 'RegisterPlayerController as ctrl'
   })
   .when('/ranking', {
     templateUrl: partialsPath + 'ranking.html',

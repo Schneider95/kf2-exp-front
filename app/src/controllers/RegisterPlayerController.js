@@ -1,4 +1,4 @@
-module.controller('AddPlayerController', ['BackEndRequestService', 'PlayersDataService', function (BackEndRequestService, PlayersDataService) {
+module.controller('RegisterPlayerController', ['BackEndRequestService', 'PlayersDataService', function (BackEndRequestService, PlayersDataService) {
 
     var self = this;
 
