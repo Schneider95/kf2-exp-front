@@ -12,7 +12,11 @@ module.controller('StatsController', ['$location', '$routeParams', 'BackEndReque
   self.getAchievementsClassicList = function () {
     return AchievementsDataService.achievementsClassic;
   };
-
+  
+  self.getAchievementsPerkDifficultyList = function () {
+    return AchievementsDataService.achievementsPerkDifficulty;
+  };
+  
   self.getBuildsList = function() {
     return BuildsList;
   };
@@ -99,6 +103,7 @@ module.controller('StatsController', ['$location', '$routeParams', 'BackEndReque
     StatsDataService.getStatsList(); 
     AchievementsDataService.getAchievementsMapsList(); 
     AchievementsDataService.getAchievementsClassicList(); 
+    AchievementsDataService.getAchievementsPerkDifficultyList();
   } else {
     // An error occured, bad URL parameter
     self.errorMessage = ids;

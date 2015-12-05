@@ -54,6 +54,18 @@ module.factory('BackEndRequestService', ['$http', '$q', 'BackEndUrl', function (
                   return $q.reject(response.data);
                 });
       },
+      getAchievementsPerkDifficultyList: function () {
+        return $http.get(BackEndUrl + 'getAchievementsPerkDifficultyList')
+                .then(function (response) {
+                  if (typeof response.data === 'object') {
+                            return response.data;
+                  } else {
+                    return $q.reject(response.data);
+                  }
+                }, function (response) {
+                  return $q.reject(response.data);
+                });
+      },
       getCitiesWithPlayers: function () {
         return $http.get(BackEndUrl + 'getCitiesWithPlayers');
       },

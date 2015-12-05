@@ -32,8 +32,23 @@ module.factory('AchievementsDataService', ['BackEndRequestService', function (Ba
 
         return getAchievementsMapsListPromise();
       },
+      getAchievementsPerkDifficultyList: function () {
+        var getAchievementsPerkDifficultyListPromise = function () {
+          BackEndRequestService.getAchievementsPerkDifficultyList()
+                  .then(function (success) {
+                   
+                    service.achievementsPerkDifficulty = success;
+
+                  }, function (error) {
+                    console.log(error);
+                  });
+        };
+
+        return getAchievementsPerkDifficultyListPromise();
+      },
       achievementsClassic: [],
-      achievementsMaps: []
+      achievementsMaps: [],
+      achievementsPerkDifficulty: []
     };
 
 

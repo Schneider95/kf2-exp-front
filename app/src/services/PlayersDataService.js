@@ -196,29 +196,32 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
       setLevelForEachPerks: function (id) {
 
         var perks = {
-          '1_1': 'commando_level',
-          '1_10': 'berzerk_level',
-          '1_20': 'support_level',
-          '1_30': 'firebug_level',
-          '1_40': 'medic_level',
-          '1_60': 'demolition_level',
+          '1_1': 'Commando',
+          '1_10': 'Berzerk',
+          '1_20': 'Support',
+          '1_30': 'Firebug',
+          '1_40': 'Medic',
+          '1_60': 'Demolitions',
+          '1_80': 'Gunslinger',
           //'sharpshooter': '',
           //'swat': '',
           //'martial_artist': '',
         };
-
+        
+        service.players[id]['level'] = [];
+        
         angular.forEach(perks, function (perkName, perkId) {
           
           if ('undefined' !== typeof service.players[id].player_stats[perkId]) {
             var level =  parseInt(service.players[id].player_stats[perkId] / 262000);
 
             if (25 < level) {
-              service.players[id][perkName] = 25;
+              service.players[id]['level'][perkName] = 25;
             } else {
-              service.players[id][perkName] = level;
+              service.players[id]['level'][perkName] = level;
             }
           } else {
-            service.players[id][perkName] = 0;
+            service.players[id]['level'][perkName] = 0;
           }
         });
       }, 

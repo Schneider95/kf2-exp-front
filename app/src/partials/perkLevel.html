@@ -1,0 +1,32 @@
+<td ng-bind="perkName"></td>
+<td ng-repeat-start="player in ctrl.getPlayers() track by $index" ng-bind="player['level'][perkName]">
+ 
+</td>
+<td>  
+  <span class="label" 
+        ng-class="{ 'mapDone': player.player_achievements[perkAchievements.No] === '1', 
+                    'mapNotDone': player.player_achievements[perkAchievements.No] === undefined}">
+    No
+  </span>
+</td>
+<td>
+  <span class="label" 
+        ng-class="{ 'mapDone': player.player_achievements[perkAchievements.Ha] === '1', 
+                    'mapNotDone': player.player_achievements[perkAchievements.Ha] === undefined}">
+    Ha
+  </span>
+</td>
+<td>
+  <span class="label" 
+        ng-class="{ 'mapDone': player.player_achievements[perkAchievements.Su] === '1', 
+                    'mapNotDone': player.player_achievements[perkAchievements.Su] === undefined}">
+    Su
+  </span>
+</td>
+<td ng-repeat-end class="tdAchievementRight">
+  <span class="label" 
+        ng-class="{ 'mapDone': player.player_achievements[perkAchievements.He] === '1', 
+                    'mapNotDone': player.player_achievements[perkAchievements.He] === undefined}">
+    He
+  </span>
+</td>

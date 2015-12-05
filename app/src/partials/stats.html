@@ -114,12 +114,12 @@
                 <tr>
                   <td></td>
                   <td class="tdImgPlayer" 
+                      colspan="5"
                       ng-repeat="player in ctrl.getPlayers() track by $index">
                     <div layout="row" layout-sm="column" 
                          layout-align="space-around">
                       <md-progress-circular ng-show="player.updating"  
                                             md-mode="indeterminate">
-
                       </md-progress-circular>
                     </div>
                     <img  ng-hide="player.updating"  
@@ -131,78 +131,24 @@
               <tbody>
                 <tr class="trOdd">
                   <td>Name</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers() track by $index" 
+                      colspan="5"
                       ng-bind="player.steam_name">
                   </td>
                 </tr>
                 <tr class="trEven">
                   <td>Update state</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers() track by $index" 
+                      colspan="5"
                       ng-bind="player.update_state">
                   </td>
                 </tr>
                 <tr>
-                  <td class="emptyRow"></td>
+                  <td class="emptyRow" colspan="5"></td>
                 </tr>
-                <tr class="trOdd">
-                  <td>Medic</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                      ng-bind="player.medic_level">
-                  </td>
-                </tr>
-                <tr class="trEven">
-                  <td>Sharpshooter</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                      ng-bind="player.sharpshooter_level">
-                  </td>
-                </tr>
-                <tr class="trOdd">
-                  <td>Support</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                      ng-bind="player.support_level">
-                  </td>
-                </tr>
-                <tr class="trEven">
-                  <td>Commando</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                      ng-bind="player.commando_level">
-                  </td>
-                </tr>
-                <tr class="trOdd">
-                  <td>Berzerk</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                      ng-bind="player.berzerk_level">
-                  </td>
-                </tr>
-                <tr class="trEven">
-                  <td>Firebug</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                      ng-bind="player.firebug_level">
-                  </td>
-                </tr>
-                <tr class="trOdd">
-                  <td>Demolitions</td> 
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                      ng-bind="player.demolitions_level">
-                  </td>
-                </tr>
-                <tr class="trEven">
-                  <td>Martial Artist</td> 
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                      ng-bind="player.martial_artist_level">
-                  </td>
-                </tr>
-                <tr class="trOdd">
-                  <td>Gunslinger</td> 
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                      ng-bind="player.gunslinger_level">
-                  </td>
-                </tr>
-                <tr class="trEven">
-                  <td>SWAT</td> 
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
-                      ng-bind="player.swat_level">
-                  </td>
+                <tr ng-repeat="(perkName, perkAchievements) in ctrl.getAchievementsPerkDifficultyList() track by $index" 
+                    ng-class-odd="'trOdd'" 
+                    ng-class-even="'trEven'" perk-level>
                 </tr>
               </tbody>
             </table>
