@@ -34,7 +34,7 @@
                 <tr>
                   <td></td>
                   <td class="tdImgPlayer" 
-                      ng-repeat="player in ctrl.getPlayers() track by $index">
+                      ng-repeat="player in ctrl.getPlayers()">
                     <div layout="row" layout-sm="column" 
                          layout-align="space-around">
                       <md-progress-circular ng-show="player.updating"  
@@ -50,13 +50,13 @@
               <tbody>
                 <tr class="trOdd">
                   <td>Name</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="player.steam_name">
                   </td>
                 </tr>
                 <tr class="trEven">
                   <td>Update state</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="player.update_state">
                   </td>
                 </tr>
@@ -65,13 +65,13 @@
                 </tr>
                 <tr class="trOdd">
                   <td>Steam profile</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index">
-                    <a href="{{player.profile_url}}">Steam profile</a>
+                  <td ng-repeat="player in ctrl.getPlayers()">
+                    <a target=_blank" href="{{player.profile_url}}">Steam profile</a>
                   </td> 
                 </tr>
                 <tr class="trEven">
                   <td>Time played</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="ctrl.getReadableTimePlayed(player.time_played)">
                   </td>
                 </tr>
@@ -83,22 +83,22 @@
                 </tr>
                 <tr class="trEven">
                   <td>Country</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="player.country.country_name"></td>
                 </tr>
                 <tr class="trOdd">
                   <td>State</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="player.state.state_name"></td>
                 </tr>
                 <tr class="trEven">
                   <td>City</td>            
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="player.city.city_name"></td>
                 </tr>
                 <tr class="trOdd">
                   <td></td>            
-                  <td ng-repeat="(id, player) in ctrl.getPlayers() track by $index">
+                  <td ng-repeat="(id, player) in ctrl.getPlayers()">
                     <md-button class="md-warn deleteButton" ng-click="ctrl.removePlayer(id)">Remove</md-button>
                   </td>
                 </tr>
@@ -115,7 +115,7 @@
                   <td></td>
                   <td class="tdImgPlayer" 
                       colspan="5"
-                      ng-repeat="player in ctrl.getPlayers() track by $index">
+                      ng-repeat="player in ctrl.getPlayers()">
                     <div layout="row" layout-sm="column" 
                          layout-align="space-around">
                       <md-progress-circular ng-show="player.updating"  
@@ -131,22 +131,29 @@
               <tbody>
                 <tr class="trOdd">
                   <td>Name</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index" 
+                  <td ng-repeat="player in ctrl.getPlayers()" 
                       colspan="5"
                       ng-bind="player.steam_name">
                   </td>
                 </tr>
                 <tr class="trEven">
                   <td>Update state</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index" 
+                  <td ng-repeat="player in ctrl.getPlayers()" 
                       colspan="5"
                       ng-bind="player.update_state">
+                  </td>
+                </tr>
+                <tr class="trOdd">
+                  <td>Achievements Perks</td>
+                  <td colspan="5" 
+                      ng-repeat="player in ctrl.getPlayers()">
+                   {{player.nb_achievements_perks_difficulty}} / {{ctrl.getNbAchievementsPerksDifficulty()}}
                   </td>
                 </tr>
                 <tr>
                   <td class="emptyRow" colspan="5"></td>
                 </tr>
-                <tr ng-repeat="(perkName, perkAchievements) in ctrl.getAchievementsPerkDifficultyList() track by $index" 
+                <tr ng-repeat="(achievementPerkName, achievement) in ctrl.getAchievementsPerksDifficultyList()" 
                     ng-class-odd="'trOdd'" 
                     ng-class-even="'trEven'" perk-level>
                 </tr>
@@ -162,7 +169,7 @@
                 <tr>
                   <td></td>
                   <td class="tdImgPlayer" 
-                      ng-repeat="player in ctrl.getPlayers() track by $index">
+                      ng-repeat="player in ctrl.getPlayers()">
                     <div layout="row" layout-sm="column" 
                          layout-align="space-around">
                       <md-progress-circular ng-show="player.updating"  
@@ -179,62 +186,66 @@
               <tbody>
                 <tr class="trOdd">
                   <td>Name</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="player.steam_name">
                   </td>
                 </tr>
                 <tr class="trEven">
                   <td>Update state</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="player.update_state">
                   </td>
                 </tr>
-                <tr>
-                  <td class="emptyRow"></td>
+                                
+                <tr ng-repeat="(buildPerkName, build) in ctrl.getBuildsList()" 
+                    ng-class-odd="'trOdd'" 
+                    ng-class-even="'trEven'" build>
                 </tr>
+                
+                <!--
                 <tr class="trOdd">
                   <td>Medic</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       build-data="ctrl.getBuildsList().medic[player.player_stats['1_41']]"
                       build>
                   </td>
                 </tr>
                 <tr class="trEven">
                   <td>Support</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       build-data="ctrl.getBuildsList().support[player.player_stats['1_21']]"
                       build>
                   </td>
                 </tr>
                 <tr class="trOdd">
                   <td>Commando</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       build-data="ctrl.getBuildsList().commando[player.player_stats['1_2']]"
                       build>
                   </td>
                 </tr>
                 <tr class="trEven">
                   <td>Berzerk</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       build-data="ctrl.getBuildsList().berzerk[player.player_stats['1_11']]"
                       build>
                   </td>
                 </tr>
                 <tr class="trOdd">
                   <td>Demolitions</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       build-data="ctrl.getBuildsList().demolitions[player.player_stats['1_61']]"
                       build>
                   </td>
                 </tr>
                 <tr class="trEven">
                   <td>Firebug</td>
-                  <td ng-repeat="player in ctrl.getPlayers() track by $index"
+                  <td ng-repeat="player in ctrl.getPlayers()"
                       build-data="ctrl.getBuildsList().firebug[player.player_stats['1_31']]"
                       build>
                   </td>
                 </tr>
-
+-->
               </tbody>
             </table>
           </md-content>
@@ -247,7 +258,7 @@
                 <tr>
                   <td></td>
                   <td class="tdImgPlayer"  colspan="4" 
-                      ng-repeat="player in ctrl.getPlayers() track by $index">
+                      ng-repeat="player in ctrl.getPlayers()">
                     <div layout="row" layout-sm="column" 
                          layout-align="space-around">
                       <md-progress-circular ng-show="player.updating"  
@@ -265,28 +276,29 @@
                 <tr class="trOdd">
                   <td>Name</td>
                   <td colspan="4"
-                      ng-repeat="player in ctrl.getPlayers() track by $index"
+                      ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="player.steam_name">
                   </td>
                 </tr>
                 <tr class="trEven">
                   <td>Update state</td>
                   <td colspan="4" 
-                      ng-repeat="player in ctrl.getPlayers() track by $index"
+                      ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="player.update_state">
                   </td>
                 </tr>
                 <tr class="trOdd">
                   <td>Achievements Maps</td>
                   <td colspan="4" 
-                      ng-repeat="player in ctrl.getPlayers() track by $index">
-                    {{player.nb_achievements_maps}} / {{ctrl.getNumberOfAchievementsMaps()}}
+                      ng-repeat="player in ctrl.getPlayers()">
+                   {{player.nb_achievements_maps_difficulty}} / {{ctrl.getNbAchievementsMapsDifficulty()}}
                   </td>
                 </tr>
                 <tr>
                   <td class="emptyRow"></td>
                 </tr>
-                <tr ng-repeat="(mapKey, mapObject) in ctrl.getAchievementsMapsList() track by $index"  ng-class-odd="'trOdd'" ng-class-even="'trEven'"
+                <tr ng-repeat="(achievementMapName, achievement) in ctrl.getAchievementsMapsList()" 
+                    ng-class-odd="'trOdd'" ng-class-even="'trEven'"
                     achievement-map >
                 </tr>
               </tbody>
@@ -301,7 +313,7 @@
                 <tr>
                   <td></td>
                   <td class="tdImgPlayer" 
-                      ng-repeat="player in ctrl.getPlayers() track by $index">
+                      ng-repeat="player in ctrl.getPlayers()">
                     <div layout="row" layout-sm="column" 
                          layout-align="space-around">
                       <md-progress-circular ng-show="player.updating"  
@@ -319,28 +331,28 @@
                 <tr class="trOdd">
                   <td>Name</td>
                   <td 
-                      ng-repeat="player in ctrl.getPlayers() track by $index"
+                      ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="player.steam_name">
                   </td>
                 </tr>
                 <tr class="trEven">
                   <td>Update state</td>
                   <td 
-                      ng-repeat="player in ctrl.getPlayers() track by $index"
+                      ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="player.update_state">
                   </td>
                 </tr>
                 <tr class="trOdd">
                   <td>Other Achievements</td>
                   <td 
-                      ng-repeat="player in ctrl.getPlayers() track by $index">
-                    {{player.nb_achievements - player.nb_achievements_maps}} / {{ctrl.getNumberOfAchievementsClassic()}}
+                      ng-repeat="player in ctrl.getPlayers()">
+                    {{player.nb_achievements_classic}} / {{ctrl.getNbAchievementsClassic()}}
                   </td>
                 </tr>
                 <tr>
                   <td class="emptyRow"></td>
                 </tr>
-                <tr ng-repeat="(achievemementKey, achievemementObject) in ctrl.getAchievementsClassicList() track by $index"  
+                <tr ng-repeat="achievement in ctrl.getAchievementsClassicList()"  
                     ng-class-odd="'trOdd'" ng-class-even="'trEven'" achievement-classic>
                 </tr>
               </tbody>
@@ -355,7 +367,7 @@
                 <tr>
                   <td></td>
                   <td class="tdImgPlayer" 
-                      ng-repeat="player in ctrl.getPlayers() track by $index">
+                      ng-repeat="player in ctrl.getPlayers()">
                     <div layout="row" layout-sm="column" 
                          layout-align="space-around">
                       <md-progress-circular ng-show="player.updating"  
@@ -373,14 +385,14 @@
                 <tr class="trOdd">
                   <td class="statName">Name</td>
                   <td 
-                    ng-repeat="player in ctrl.getPlayers() track by $index"
+                    ng-repeat="player in ctrl.getPlayers()"
                     ng-bind="player.steam_name">
                   </td>
                 </tr>
                 <tr class="trEven">
                   <td>Update state</td>
                   <td
-                    ng-repeat="player in ctrl.getPlayers() track by $index"
+                    ng-repeat="player in ctrl.getPlayers()"
                     ng-bind="player.update_state">
                   </td>
                 </tr>

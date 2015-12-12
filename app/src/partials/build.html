@@ -1,1 +1,6 @@
-<span ng-repeat="skill in buildData">{{skill}}<br></span>
+<td>{{buildPerkName}}</td>
+<td ng-repeat="player in ctrl.getPlayers()">
+  <span ng-repeat="skill in build[player.player_stats[build.statIndex]]">
+    {{skill}}<br>
+  </span>
+</td>

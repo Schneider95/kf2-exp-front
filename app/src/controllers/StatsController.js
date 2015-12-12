@@ -6,15 +6,15 @@ module.controller('StatsController', ['$location', '$routeParams', 'BackEndReque
   self.maps = [];
 
   self.getAchievementsMapsList = function () {
-    return AchievementsDataService.achievementsMaps;
+    return AchievementsDataService.achievementsMapsDifficulty;
   };
 
   self.getAchievementsClassicList = function () {
     return AchievementsDataService.achievementsClassic;
   };
   
-  self.getAchievementsPerkDifficultyList = function () {
-    return AchievementsDataService.achievementsPerkDifficulty;
+  self.getAchievementsPerksDifficultyList = function () { 
+    return AchievementsDataService.achievementsPerksDifficulty;
   };
   
   self.getBuildsList = function() {
@@ -29,23 +29,23 @@ module.controller('StatsController', ['$location', '$routeParams', 'BackEndReque
     return Object.keys(self.getPlayers()).length;
   };
 
-  self.getNumberOfAchievementsClassic = function () {
-    return Object.keys(AchievementsDataService.achievementsClassic).length;
+  self.getNbAchievementsClassic = function () {
+    return AchievementsDataService.nbAchievementsClassic;
   };
 
-  self.getNumberOfAchievementsMaps = function () {      
-    return Object.keys(AchievementsDataService.achievementsMaps).length * 4;
+  self.getNbAchievementsMapsDifficulty = function () {    
+    return AchievementsDataService.nbAchievementsMapsDifficulty;
+  };
+  
+  self.getNbAchievementsPerksDifficulty = function () {    
+    return AchievementsDataService.nbAchievementsPerksDifficulty;
   };
 
   self.getNumberOfAchievementsTotal = function () {      
-    return self.getNumberOfAchievementsMaps() + self.getNumberOfAchievementsClassic();
+    return AchievementsDataService.nbAchievements;
   };
 
-  self.getNumberOfMaps = function () {      
-    return Object.keys(AchievementsDataService.achievementsMaps).length;
-  };
-
-  self.getPlayers = function () {
+  self.getPlayers = function () { 
     return PlayersDataService.players;
   };
 
@@ -88,7 +88,13 @@ module.controller('StatsController', ['$location', '$routeParams', 'BackEndReque
     PlayersDataService.addPlayer(item.playerId);
     PlayersDataService.updatePlayer(item.playerId);
     $location.path("/stats/" + PlayersDataService.playersIdsString, false);
+    self.clear();
   };
+  
+  self.clear = function() {
+    self.selectedItem = null;
+    self.searchText = "";
+  }
 
   self.loadPlayersNameList();
 
@@ -101,9 +107,7 @@ module.controller('StatsController', ['$location', '$routeParams', 'BackEndReque
     PlayersDataService.loadPlayersFromUrl($routeParams.ids);
     PlayersDataService.updatePlayers();
     StatsDataService.getStatsList(); 
-    AchievementsDataService.getAchievementsMapsList(); 
-    AchievementsDataService.getAchievementsClassicList(); 
-    AchievementsDataService.getAchievementsPerkDifficultyList();
+    AchievementsDataService.getAchievementsList(); 
   } else {
     // An error occured, bad URL parameter
     self.errorMessage = ids;

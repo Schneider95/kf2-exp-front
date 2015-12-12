@@ -183,29 +183,48 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
 
         var statsArray = [];
         var achievementsArray = [];
-        angular.forEach(service.players[id].player_stats, function (player_stat) {
+        angular.forEach(service.players[id].player_stats, function (player_stat) {          
           statsArray[player_stat.stat.stat_name] = player_stat.value;
         });
+        
+        service.players[id].nb_achievements = 0;
+        service.players[id].nb_achievements_classic = 0;
+        service.players[id].nb_achievements_maps_difficulty = 0;
+        service.players[id].nb_achievements_perks_difficulty = 0;
+        
         angular.forEach(service.players[id].player_achievements, function (player_achievement) {
-          achievementsArray[player_achievement.achievement.achievement_name] = player_achievement.value;
+          
+          if (true === player_achievement.achievement.collectible) {
+            service.players[id].nb_achievements_classic++;
+          }
+          
+          if ('undefined' !== typeof player_achievement.achievement.map && 
+              'undefined' !== typeof player_achievement.achievement.difficulty) {
+            service.players[id].nb_achievements_maps_difficulty++;
+          }
+          
+          if ('undefined' !== typeof player_achievement.achievement.perk && 
+              'undefined' !== typeof player_achievement.achievement.difficulty) {
+            service.players[id].nb_achievements_perks_difficulty++;
+          }
+          
+          service.players[id].nb_achievements++;
+          
+          achievementsArray[player_achievement.achievement.name] = player_achievement.value;
         });
         service.players[id].player_stats = statsArray;
         service.players[id].player_achievements = achievementsArray;
         service.setLevelForEachPerks(id);
       },
       setLevelForEachPerks: function (id) {
-
         var perks = {
           '1_1': 'Commando',
-          '1_10': 'Berzerk',
+          '1_10': 'Berserker',
           '1_20': 'Support',
           '1_30': 'Firebug',
           '1_40': 'Medic',
-          '1_60': 'Demolitions',
-          '1_80': 'Gunslinger',
-          //'sharpshooter': '',
-          //'swat': '',
-          //'martial_artist': '',
+          '1_60': 'Demolition',
+          '1_80': 'Gunslinger'
         };
         
         service.players[id]['level'] = [];
@@ -257,7 +276,7 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
         };
         var getProfileDataPromise = function (steamId) {
           BackEndRequestService.getProfileDataFromSteamAPI(steamId).then(
-                  function (success) {
+                  function (success) { 
                     if (success.communityvisibilitystate === 3) {
                       return updateProfileDataPromise();
                     } else {

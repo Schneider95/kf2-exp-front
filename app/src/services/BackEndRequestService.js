@@ -30,32 +30,8 @@ module.factory('BackEndRequestService', ['$http', '$q', 'BackEndUrl', function (
                   return $q.reject(response.data);
                 });
       },
-      getAchievementsClassicList: function () {
-        return $http.get(BackEndUrl + 'getAchievementsClassicList')
-                .then(function (response) {
-                  if (typeof response.data === 'object') {
-                            return response.data;
-                  } else {
-                    return $q.reject(response.data);
-                  }
-                }, function (response) {
-                  return $q.reject(response.data);
-                });
-      },
-      getAchievementsMapsList: function () {
-        return $http.get(BackEndUrl + 'getAchievementsMapsList')
-                .then(function (response) {
-                  if (typeof response.data === 'object') {
-                            return response.data;
-                  } else {
-                    return $q.reject(response.data);
-                  }
-                }, function (response) {
-                  return $q.reject(response.data);
-                });
-      },
-      getAchievementsPerkDifficultyList: function () {
-        return $http.get(BackEndUrl + 'getAchievementsPerkDifficultyList')
+      getAchievementsList: function () {
+        return $http.get(BackEndUrl + 'getAchievementsList')
                 .then(function (response) {
                   if (typeof response.data === 'object') {
                             return response.data;
@@ -112,10 +88,10 @@ module.factory('BackEndRequestService', ['$http', '$q', 'BackEndUrl', function (
                 });
       },
       getPlayerById: function (id) {
-
+        
         return $http.get(BackEndUrl + 'getPlayer/' + id)
                 .then(function (response) {
-                  if (typeof response.data === 'object') {
+                  if (typeof response.data === 'object') { 
                     return response.data;
                   } else {
                     return $q.reject(response.data);
