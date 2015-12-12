@@ -13,6 +13,11 @@ module.factory('AchievementsDataService', ['BackEndRequestService', function (Ba
               var achievementsPerksDifficultyUnsorted = {};
               var achievementsClassicUnsorted = {};
 
+              service.nbAchievements = 0;
+              service.nbAchievementsMapsDifficulty = 0;
+              service.nbAchievementsPerksDifficulty = 0;
+              service.nbAchievementsClassic = 0;
+              
               angular.forEach(achievements, function (achievement) {
                 
                 service.nbAchievements++;
