@@ -56,7 +56,7 @@ module.factory('AchievementsDataService', ['BackEndRequestService', function (Ba
                   }
                 } 
 
-                if (achievement.hasOwnProperty('collectible')) {
+                if (achievement.hasOwnProperty('classic')) {
                   if (undefined === achievementsClassicUnsorted[achievement.name]) {
                     achievementsClassicUnsorted[achievement.visible_name] = achievement;
                     service.nbAchievementsClassic++;

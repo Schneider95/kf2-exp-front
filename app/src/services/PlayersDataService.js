@@ -223,6 +223,7 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
           '1_20': 'Support',
           '1_30': 'Firebug',
           '1_40': 'Medic',
+          '1_50': 'Sharpshooter',
           '1_60': 'Demolition',
           '1_80': 'Gunslinger'
         };

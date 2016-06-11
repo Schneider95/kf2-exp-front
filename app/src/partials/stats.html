@@ -66,7 +66,7 @@
                 <tr class="trOdd">
                   <td>Steam profile</td>
                   <td ng-repeat="player in ctrl.getPlayers()">
-                    <a target=_blank" href="{{player.profile_url}}">Steam profile</a>
+                    <a target="_blank" href="{{player.profile_url}}">Steam profile</a>
                   </td> 
                 </tr>
                 <tr class="trEven">
@@ -195,57 +195,11 @@
                   <td ng-repeat="player in ctrl.getPlayers()"
                       ng-bind="player.update_state">
                   </td>
-                </tr>
-                                
+                </tr>    
                 <tr ng-repeat="(buildPerkName, build) in ctrl.getBuildsList()" 
                     ng-class-odd="'trOdd'" 
                     ng-class-even="'trEven'" build>
                 </tr>
-                
-                <!--
-                <tr class="trOdd">
-                  <td>Medic</td>
-                  <td ng-repeat="player in ctrl.getPlayers()"
-                      build-data="ctrl.getBuildsList().medic[player.player_stats['1_41']]"
-                      build>
-                  </td>
-                </tr>
-                <tr class="trEven">
-                  <td>Support</td>
-                  <td ng-repeat="player in ctrl.getPlayers()"
-                      build-data="ctrl.getBuildsList().support[player.player_stats['1_21']]"
-                      build>
-                  </td>
-                </tr>
-                <tr class="trOdd">
-                  <td>Commando</td>
-                  <td ng-repeat="player in ctrl.getPlayers()"
-                      build-data="ctrl.getBuildsList().commando[player.player_stats['1_2']]"
-                      build>
-                  </td>
-                </tr>
-                <tr class="trEven">
-                  <td>Berzerk</td>
-                  <td ng-repeat="player in ctrl.getPlayers()"
-                      build-data="ctrl.getBuildsList().berzerk[player.player_stats['1_11']]"
-                      build>
-                  </td>
-                </tr>
-                <tr class="trOdd">
-                  <td>Demolitions</td>
-                  <td ng-repeat="player in ctrl.getPlayers()"
-                      build-data="ctrl.getBuildsList().demolitions[player.player_stats['1_61']]"
-                      build>
-                  </td>
-                </tr>
-                <tr class="trEven">
-                  <td>Firebug</td>
-                  <td ng-repeat="player in ctrl.getPlayers()"
-                      build-data="ctrl.getBuildsList().firebug[player.player_stats['1_31']]"
-                      build>
-                  </td>
-                </tr>
--->
               </tbody>
             </table>
           </md-content>
