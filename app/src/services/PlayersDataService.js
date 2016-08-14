@@ -213,7 +213,7 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
           if (true === playerAchievement.achievement.collectible) {
             service.players[id].nb_achievements_classic++;
           }
-          
+
           if ('undefined' !== typeof playerAchievement.achievement.map && 
               'undefined' !== typeof playerAchievement.achievement.difficulty) {
             service.players[id].nb_achievements_maps_difficulty++;
@@ -225,45 +225,12 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
           }
           
           service.players[id].nb_achievements++;
-          
           achievementsArray[playerAchievement.achievement.name] = playerAchievement;
         });
 
         service.players[id].player_stats = statsArray;
-
         service.players[id].player_achievements = achievementsArray;
-        //service.setLevelForEachPerks(id);
       },
-      setLevelForEachPerks: function (id) {
-        // var perks = {
-        //   '1_1': 'Commando',
-        //   '1_10': 'Berserker',
-        //   '1_20': 'Support',
-        //   '1_30': 'Firebug',
-        //   '1_40': 'Medic',
-        //   '1_50': 'Sharpshooter',
-        //   '1_60': 'Demolition',
-        //   '1_80': 'Gunslinger',
-        //   '1_90': 'SWAT',
-        // };
-        
-        // service.players[id]['level'] = [];
-        
-        // angular.forEach(perks, function (perkName, perkId) {
-          
-        //   if ('undefined' !== typeof service.players[id].player_stats[perkId]) {
-        //     var level =  parseInt(service.players[id].player_stats[perkId] / 262000);
-
-        //     if (25 < level) {
-        //       service.players[id]['level'][perkName] = 25;
-        //     } else {
-        //       service.players[id]['level'][perkName] = level;
-        //     }
-        //   } else {
-        //     service.players[id]['level'][perkName] = 0;
-        //   }
-        // });
-      }, 
       updatePlayer: function (id) {
 
         service.players[id].updating = true;

@@ -26,14 +26,12 @@ module.factory('AchievementsDataService', ['BackEndRequestService', function (Ba
                   
                   service.nbAchievementsMapsDifficulty++;
                   
-                  if (undefined === achievementsMapsDifficultyUnsorted[achievement.map]) {
-                    achievementsMapsDifficultyUnsorted[achievement.map] = {};
+                  if (undefined === achievementsMapsDifficultyUnsorted[achievement.map.name]) {
+                    achievementsMapsDifficultyUnsorted[achievement.map.name] = {};
                   }
                   
-                  if (undefined === achievementsMapsDifficultyUnsorted[achievement.map][achievement.difficulty]) {
-                    achievementsMapsDifficultyUnsorted[achievement.map][achievement.difficulty] = {
-                      difficulty: achievement.difficulty,
-                      map: achievement.map,
+                  if (undefined === achievementsMapsDifficultyUnsorted[achievement.map.name][achievement.difficulty.name]) {
+                    achievementsMapsDifficultyUnsorted[achievement.map.name][achievement.difficulty.name] = {
                       name: achievement.name
                     };
                   }
@@ -47,9 +45,9 @@ module.factory('AchievementsDataService', ['BackEndRequestService', function (Ba
                     achievementsPerksDifficultyUnsorted[achievement.perk.name] = {};
                   }
 
-                  if (undefined === achievementsPerksDifficultyUnsorted[achievement.perk.name][achievement.difficulty]) {
-                    achievementsPerksDifficultyUnsorted[achievement.perk.name][achievement.difficulty] = {
-                      difficulty: achievement.difficulty,
+                  if (undefined === achievementsPerksDifficultyUnsorted[achievement.perk.name][achievement.difficulty.name]) {
+                    achievementsPerksDifficultyUnsorted[achievement.perk.name][achievement.difficulty.name] = {
+                      difficulty: achievement.difficulty.name,
                       perk: achievement.perk.name,
                       name: achievement.name
                     };
@@ -58,7 +56,7 @@ module.factory('AchievementsDataService', ['BackEndRequestService', function (Ba
 
                 if (achievement.hasOwnProperty('classic')) {
                   if (undefined === achievementsClassicUnsorted[achievement.name]) {
-                    achievementsClassicUnsorted[achievement.visible_name] = achievement;
+                    achievementsClassicUnsorted[achievement.name] = achievement;
                     service.nbAchievementsClassic++;
                   }
                 } 
@@ -75,7 +73,6 @@ module.factory('AchievementsDataService', ['BackEndRequestService', function (Ba
               Object.keys(achievementsClassicUnsorted).sort().forEach(function(key) {
                 service.achievementsClassic[key] = achievementsClassicUnsorted[key];
               });
-
             }, function (error) {
               console.log(error);
             });

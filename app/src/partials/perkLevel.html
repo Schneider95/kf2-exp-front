@@ -4,28 +4,28 @@
 </td>
 <td>
   <span class="label" 
-        ng-class="{ 'mapDone': player.player_achievements[achievement.No.name] === '1', 
+        ng-class="{ 'mapDone': player.player_achievements[achievement.No.name].value === '1', 
                     'mapNotDone': player.player_achievements[achievement.No.name] === undefined}">
     No
   </span>
 </td>
 <td>
   <span class="label" 
-        ng-class="{ 'mapDone': player.player_achievements[achievement.Ha.name] === '1', 
+        ng-class="{ 'mapDone': player.player_achievements[achievement.Ha.name].value === '1', 
                     'mapNotDone': player.player_achievements[achievement.Ha.name] === undefined}">
     Ha
   </span>
 </td>
 <td>
   <span class="label" 
-        ng-class="{ 'mapDone': player.player_achievements[achievement.Su.name] === '1', 
+        ng-class="{ 'mapDone': player.player_achievements[achievement.Su.name].value === '1', 
                     'mapNotDone': player.player_achievements[achievement.Su.name] === undefined}">
     Su
   </span>
 </td>
 <td ng-repeat-end class="tdAchievementRight">
   <span class="label" 
-        ng-class="{ 'mapDone': player.player_achievements[achievement.He.name] === '1', 
+        ng-class="{ 'mapDone': player.player_achievements[achievement.He.name].value === '1', 
                     'mapNotDone': player.player_achievements[achievement.He.name] === undefined}">
     He
   </span>
