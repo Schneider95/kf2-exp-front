@@ -19,7 +19,7 @@ module.factory('AchievementsDataService', ['BackEndRequestService', function (Ba
               service.nbAchievementsClassic = 0;
               
               angular.forEach(achievements, function (achievement) {
-                
+
                 service.nbAchievements++;
                 
                 if (achievement.hasOwnProperty('map') && achievement.hasOwnProperty('difficulty')) {
@@ -43,14 +43,14 @@ module.factory('AchievementsDataService', ['BackEndRequestService', function (Ba
                   
                   service.nbAchievementsPerksDifficulty++;
                   
-                  if (undefined === achievementsPerksDifficultyUnsorted[achievement.perk]) {
-                    achievementsPerksDifficultyUnsorted[achievement.perk] = {};
+                  if (undefined === achievementsPerksDifficultyUnsorted[achievement.perk.name]) {
+                    achievementsPerksDifficultyUnsorted[achievement.perk.name] = {};
                   }
-                  
-                  if (undefined === achievementsPerksDifficultyUnsorted[achievement.perk][achievement.difficulty]) {
-                    achievementsPerksDifficultyUnsorted[achievement.perk][achievement.difficulty] = {
+
+                  if (undefined === achievementsPerksDifficultyUnsorted[achievement.perk.name][achievement.difficulty]) {
+                    achievementsPerksDifficultyUnsorted[achievement.perk.name][achievement.difficulty] = {
                       difficulty: achievement.difficulty,
-                      perk: achievement.perk,
+                      perk: achievement.perk.name,
                       name: achievement.name
                     };
                   }

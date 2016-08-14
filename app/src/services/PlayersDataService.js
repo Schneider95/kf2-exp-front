@@ -183,68 +183,86 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
 
         var statsArray = [];
         var achievementsArray = [];
-        angular.forEach(service.players[id].player_stats, function (player_stat) {          
-          statsArray[player_stat.stat.stat_name] = player_stat.value;
-        });
-        
+        service.players[id].level = [];
         service.players[id].nb_achievements = 0;
         service.players[id].nb_achievements_classic = 0;
         service.players[id].nb_achievements_maps_difficulty = 0;
         service.players[id].nb_achievements_perks_difficulty = 0;
-        
-        angular.forEach(service.players[id].player_achievements, function (player_achievement) {
+
+        // Stats
+        angular.forEach(service.players[id].player_stats, function (playerStat) { 
+
+          statsArray[playerStat.stat.stat_name] = playerStat;
+  
+          if ('undefined' !== typeof playerStat.stat.perk && true === playerStat.stat.is_xp) {
+
+              var level =  parseInt(playerStat.value / 262000);
+              
+              if (25 < level) {
+                service.players[id].level[playerStat.stat.perk.name] = 25;
+              } else {
+                service.players[id].level[playerStat.stat.perk.name] = level;
+              }
+
+          } 
+        });
+
+        // Achievements
+        angular.forEach(service.players[id].player_achievements, function (playerAchievement) {
           
-          if (true === player_achievement.achievement.collectible) {
+          if (true === playerAchievement.achievement.collectible) {
             service.players[id].nb_achievements_classic++;
           }
           
-          if ('undefined' !== typeof player_achievement.achievement.map && 
-              'undefined' !== typeof player_achievement.achievement.difficulty) {
+          if ('undefined' !== typeof playerAchievement.achievement.map && 
+              'undefined' !== typeof playerAchievement.achievement.difficulty) {
             service.players[id].nb_achievements_maps_difficulty++;
           }
           
-          if ('undefined' !== typeof player_achievement.achievement.perk && 
-              'undefined' !== typeof player_achievement.achievement.difficulty) {
+          if ('undefined' !== typeof playerAchievement.achievement.perk && 
+              'undefined' !== typeof playerAchievement.achievement.difficulty) {
             service.players[id].nb_achievements_perks_difficulty++;
           }
           
           service.players[id].nb_achievements++;
           
-          achievementsArray[player_achievement.achievement.name] = player_achievement.value;
+          achievementsArray[playerAchievement.achievement.name] = playerAchievement;
         });
+
         service.players[id].player_stats = statsArray;
+
         service.players[id].player_achievements = achievementsArray;
-        service.setLevelForEachPerks(id);
+        //service.setLevelForEachPerks(id);
       },
       setLevelForEachPerks: function (id) {
-        var perks = {
-          '1_1': 'Commando',
-          '1_10': 'Berserker',
-          '1_20': 'Support',
-          '1_30': 'Firebug',
-          '1_40': 'Medic',
-          '1_50': 'Sharpshooter',
-          '1_60': 'Demolition',
-          '1_80': 'Gunslinger',
-          '1_90': 'SWAT',
-        };
+        // var perks = {
+        //   '1_1': 'Commando',
+        //   '1_10': 'Berserker',
+        //   '1_20': 'Support',
+        //   '1_30': 'Firebug',
+        //   '1_40': 'Medic',
+        //   '1_50': 'Sharpshooter',
+        //   '1_60': 'Demolition',
+        //   '1_80': 'Gunslinger',
+        //   '1_90': 'SWAT',
+        // };
         
-        service.players[id]['level'] = [];
+        // service.players[id]['level'] = [];
         
-        angular.forEach(perks, function (perkName, perkId) {
+        // angular.forEach(perks, function (perkName, perkId) {
           
-          if ('undefined' !== typeof service.players[id].player_stats[perkId]) {
-            var level =  parseInt(service.players[id].player_stats[perkId] / 262000);
+        //   if ('undefined' !== typeof service.players[id].player_stats[perkId]) {
+        //     var level =  parseInt(service.players[id].player_stats[perkId] / 262000);
 
-            if (25 < level) {
-              service.players[id]['level'][perkName] = 25;
-            } else {
-              service.players[id]['level'][perkName] = level;
-            }
-          } else {
-            service.players[id]['level'][perkName] = 0;
-          }
-        });
+        //     if (25 < level) {
+        //       service.players[id]['level'][perkName] = 25;
+        //     } else {
+        //       service.players[id]['level'][perkName] = level;
+        //     }
+        //   } else {
+        //     service.players[id]['level'][perkName] = 0;
+        //   }
+        // });
       }, 
       updatePlayer: function (id) {
 

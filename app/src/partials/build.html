@@ -1,6 +1,7 @@
 <td>{{buildPerkName}}</td>
 <td ng-repeat="player in ctrl.getPlayers()">
-  <span ng-repeat="skill in build[player.player_stats[build.statIndex]]">
-    {{skill}}<br>
+  <span ng-repeat="skill in buildsPerk.builds[player.player_stats[buildsPerk.statIndex].value]">
+  	{{skill}}
+  	<br>
   </span>
 </td>

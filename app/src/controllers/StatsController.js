@@ -1,4 +1,4 @@
-module.controller('StatsController', ['$location', '$routeParams', 'BackEndRequestService', 'AchievementsDataService', 'PlayersDataService', 'MapsDataService', 'StatsDataService','BuildsList', function ($location, $routeParams, BackEndRequestService, AchievementsDataService, PlayersDataService, MapsDataService, StatsDataService, BuildsList) {
+module.controller('StatsController', ['$location', '$routeParams', 'BackEndRequestService', 'AchievementsDataService', 'PlayersDataService', 'MapsDataService', 'StatsDataService','BuildsDataService', function ($location, $routeParams, BackEndRequestService, AchievementsDataService, PlayersDataService, MapsDataService, StatsDataService, BuildsDataService) {
 
   var self = this;
   self.achievements = [];
@@ -17,8 +17,8 @@ module.controller('StatsController', ['$location', '$routeParams', 'BackEndReque
     return AchievementsDataService.achievementsPerksDifficulty;
   };
   
-  self.getBuildsList = function() {
-    return BuildsList;
+  self.getBuildsList = function () {
+    return BuildsDataService.builds;
   };
 
   self.getMapsList = function () {
@@ -108,6 +108,7 @@ module.controller('StatsController', ['$location', '$routeParams', 'BackEndReque
     PlayersDataService.updatePlayers();
     StatsDataService.getStatsList(); 
     AchievementsDataService.getAchievementsList(); 
+    BuildsDataService.getBuildsList(); 
   } else {
     // An error occured, bad URL parameter
     self.errorMessage = ids;
