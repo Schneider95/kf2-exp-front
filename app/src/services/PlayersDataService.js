@@ -210,10 +210,6 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
         // Achievements
         angular.forEach(service.players[id].player_achievements, function (playerAchievement) {
           
-          if (true === playerAchievement.achievement.collectible) {
-            service.players[id].nb_achievements_classic++;
-          }
-
           if ('undefined' !== typeof playerAchievement.achievement.map && 
               'undefined' !== typeof playerAchievement.achievement.difficulty) {
             service.players[id].nb_achievements_maps_difficulty++;
@@ -222,6 +218,10 @@ module.factory('PlayersDataService', ['SecondsBeforeUpdatePlayer', 'BackEndReque
           if ('undefined' !== typeof playerAchievement.achievement.perk && 
               'undefined' !== typeof playerAchievement.achievement.difficulty) {
             service.players[id].nb_achievements_perks_difficulty++;
+          }
+
+          if (playerAchievement.achievement.classic) {
+            service.players[id].nb_achievements_classic++;
           }
           
           service.players[id].nb_achievements++;
